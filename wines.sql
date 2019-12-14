@@ -1,0 +1,14 @@
+DROP DATABASE IF EXISTS wine_db;
+CREATE DATABASE wine_db;
+USE wine_db;
+
+CREATE TABLE wines(
+  id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  year INTEGER(11),
+  country VARCHAR(100) NOT NULL,
+  region VARCHAR(100) NOT NULL,
+  varietal VARCHAR(100) NOT NULL,
+  producer VARCHAR(100) NOT NULL,
+  ageability index INTEGER(11),
+  PRIMARY KEY (id)
+);
