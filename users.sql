@@ -1,8 +1,0 @@
-USE wine_db;
-
-CREATE TABLE users(
-  id INTEGER(11) AUTO_INCREMENT NOT NULL,
-  names VARCHAR(100) NOT NULL,
-  emails VARCHAR(100) NOT NULL,
-  PRIMARY KEY (id)
-);
