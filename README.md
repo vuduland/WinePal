@@ -12,4 +12,5 @@ Inside it, put in your local DB credentials like so:
 DB_HOST=localhost
 DB_USER=root
 DB_PASS=password
+NODE_ENV=development
 ```
