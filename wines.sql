@@ -4,11 +4,11 @@ USE wine_db;
 
 CREATE TABLE wines(
   id INTEGER(11) AUTO_INCREMENT NOT NULL,
-  year INTEGER(11),
+  vintage INTEGER(11),
   country VARCHAR(100) NOT NULL,
   region VARCHAR(100) NOT NULL,
   varietal VARCHAR(100) NOT NULL,
   producer VARCHAR(100) NOT NULL,
-  ageability index INTEGER(11),
+  ageability_index INTEGER(11),
   PRIMARY KEY (id)
 );

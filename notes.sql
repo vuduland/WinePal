@@ -1,6 +1,4 @@
-DROP DATABASE IF EXISTS notes_db;
-CREATE DATABASE notes_db;
-USE notes_db;
+USE wine_db;
 
 CREATE TABLE history(
   id INTEGER(11) AUTO_INCREMENT NOT NULL,

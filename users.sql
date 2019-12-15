@@ -1,10 +1,8 @@
-DROP DATABASE IF EXISTS user_db;
-CREATE DATABASE user_db;
-USE user_db;
+USE wine_db;
 
 CREATE TABLE users(
-  inventory_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  id INTEGER(11) AUTO_INCREMENT NOT NULL,
   names VARCHAR(100) NOT NULL,
   emails VARCHAR(100) NOT NULL,
-  PRIMARY KEY (inventory_id)
+  PRIMARY KEY (id)
 );

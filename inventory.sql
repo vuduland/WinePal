@@ -1,6 +1,4 @@
-DROP DATABASE IF EXISTS inventory_db;
-CREATE DATABASE inventory_db;
-USE inventory_db;
+USE wine_db;
 
 CREATE TABLE inventory(
   id INTEGER(11) AUTO_INCREMENT NOT NULL,
@@ -8,5 +6,5 @@ CREATE TABLE inventory(
   quantity VARCHAR(100) NOT NULL,
   wine VARCHAR(100) NOT NULL,
   vendor VARCHAR(100),
-  PRIMARY KEY (user)
+  PRIMARY KEY (id)
 );
