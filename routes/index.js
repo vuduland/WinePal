@@ -15,11 +15,6 @@ router.get('/api/all-wines', (req, res, next) => {
     res.json(data);
   });
 });
-router.get('/api/all-users', (req, res, next) => {
-  db.users.findAll({}).then(data => {
-    res.json(data);
-  });
-});
 
 router.post('/api/add-wine', (req, res, next) => {
   db.wines
@@ -34,24 +29,6 @@ router.post('/api/add-wine', (req, res, next) => {
     .then(data => {
       res.json(data);
     });
-});
-router.post('/api/add-user', (req, res, next) => {
-  db.users
-    .create({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-    })
-    .then(data => res.json(data));
-});
-
-router.post('/api/login', passport.authenticate('local'), (req, res, next) => {
-  res.json('/welcome');
-});
-
-router.get('/logout', (req, res, next) => {
-  req.logout();
-  res.redirect('/');
 });
 
 router.get('/dashboard', (req, res, next) => {
