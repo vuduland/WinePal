@@ -16,7 +16,7 @@ const sequelize = new Sequelize(
     host: config.host,
     dialect: 'mysql',
     define: {
-      timestamps: false,
+      // timestamps: false,
     },
   }
 );

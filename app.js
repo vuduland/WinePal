@@ -1,11 +1,13 @@
 var createError = require('http-errors');
 var express = require('express');
+var session = require('express-session');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var passport = require('./config/passport');
 
 var app = express();
 
@@ -27,6 +29,11 @@ app.use(
     sourceMap: true,
   })
 );
+app.use(
+  session({ secret: 'sldkfjjfdkls', resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);

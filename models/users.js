@@ -1,7 +1,7 @@
-/* jshint indent: 2 */
+var bcrypt = require('bcryptjs');
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define(
+  var users = sequelize.define(
     'users',
     {
       id: {
@@ -21,9 +21,25 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         comment: 'null',
       },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        comment: 'null',
+      },
     },
     {
       tableName: 'users',
     }
   );
+  users.prototype.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
+  };
+  users.beforeCreate(user => {
+    user.password = bcrypt.hashSync(
+      user.password,
+      bcrypt.genSaltSync(10),
+      null
+    );
+  });
+  return users;
 };
