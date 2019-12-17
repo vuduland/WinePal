@@ -31,5 +31,10 @@ block content
             .input-block
         .wine-listing
           h2 Stock
-          .listing #{userWines}
+          each wine in userWines
+            .listing
+                h3= wine.wines.producer
+                p= wine.wines.vintage
+                p Quantity #{wine.quantity}
+                p Bought from #{wine.vendor}
 

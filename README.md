@@ -14,3 +14,7 @@ DB_USER=root
 DB_PASS=password
 NODE_ENV=development
 ```
+
+#### Error
+
+`` wines`.`wineId` AS `wines.wineId` FROM `inventory` AS `inventory` INNER JOIN `wines` AS `wines` ON `inventory`.`id` = `wines`.`wineId` WHERE `inventory`.`user_id` = 1; ``

@@ -25,15 +25,15 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
         comment: 'null',
       },
-      wine: {
-        type: DataTypes.INTEGER(11),
-        allowNull: false,
-        comment: 'null',
-        references: {
-          model: 'wines',
-          key: 'id',
-        },
-      },
+      // wine: {
+      //   type: DataTypes.INTEGER(11),
+      //   allowNull: false,
+      //   comment: 'null',
+      //   references: {
+      //     model: 'wines',
+      //     key: 'id',
+      //   },
+      // },
       vendor: {
         type: DataTypes.STRING(100),
         allowNull: true,

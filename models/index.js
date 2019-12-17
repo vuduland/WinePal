@@ -40,4 +40,6 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
+db.inventory.hasOne(db.wines, { as: 'wines', foreignKey: 'id' });
+
 module.exports = db;

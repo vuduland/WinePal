@@ -27,6 +27,7 @@ router.get('/dashboard', (req, res, next) => {
       ]
 
     }).then(userWines => {
+      console.log(userWines);
       res.render('dashboard', {
         name: req.user.name,
         email: req.user.email,
