@@ -6,40 +6,45 @@ var db = require('../models');
 var passport = require('../config/passport');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-router.get('/api/all-wines', (req, res, next) => {
-  db.wines.findAll({}).then(data => {
-    res.json(data);
-  });
-});
-
-router.post('/api/add-wine', (req, res, next) => {
-  db.wines
-    .create({
-      vintage: 2004,
-      country: 'USA',
-      region: 'California',
-      varietal: 'merlot',
-      producer: 'Marcle',
-      ageability_index: 10,
-    })
-    .then(data => {
-      res.json(data);
-    });
+router.get('/', function (req, res, next) {
+  res.render('index', { title: '🍷 Wine Pal 🍷' });
 });
 
 router.get('/dashboard', (req, res, next) => {
   if (!req.user) {
     res.json({});
   } else {
-    res.json({
-      name: req.user.name,
-      email: req.user.email,
-    });
+    db.inventory.findAll({
+      where: {
+        user_id: req.user.id
+      },
+      include: [
+        {
+          model: db.wines,
+          as: 'wines',
+          required: true
+        }
+      ]
+
+    }).then(userWines => {
+      console.log(userWines);
+      res.render('dashboard', {
+        name: req.user.name,
+        email: req.user.email,
+        id: req.user.id,
+        userWines: userWines,
+      });
+    })
   }
 });
+
+router.get('/register', function (req, res, next) {
+  res.render('register', { title: 'Registration' });
+});
+
+router.get('/login', function (req, res, next) {
+  res.render('login', { title: 'Login' });
+});
+
 
 module.exports = router;

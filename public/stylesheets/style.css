@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
 * {
-  font-family: "Nunito Sans", sans-serif; }
+  font-family: 'Nunito Sans', sans-serif; }
 
 body {
   margin: 0;
@@ -62,5 +62,14 @@ header {
     background-color: #f9fad4;
     color: #6d1a1a;
     margin-top: auto; }
+
+.add-wine {
+  display: block;
+  max-width: 500px; }
+  .add-wine label,
+  .add-wine input {
+    display: block;
+    width: 100%;
+    padding: 5px; }
 
 /*# sourceMappingURL=style.css.map */
