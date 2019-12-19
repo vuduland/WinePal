@@ -10,25 +10,23 @@ passport.use(
       passwordField: 'password',
     },
     function(email, password, done) {
-      db.users
-        .findOne({
-          where: {
-            email,
-          },
-        })
-        .then(function(dbUser) {
-          if (!dbUser) {
-            return done(null, false, {
-              message: 'Incorrect email.',
-            });
-          }
-          if (!dbUser.validPassword(password)) {
-            return done(null, false, {
-              message: 'Incorrect password.',
-            });
-          }
-          return done(null, dbUser);
-        });
+      db.User.findOne({
+        where: {
+          email,
+        },
+      }).then(function(dbUser) {
+        if (!dbUser) {
+          return done(null, false, {
+            message: 'Incorrect email.',
+          });
+        }
+        if (!dbUser.validPassword(password)) {
+          return done(null, false, {
+            message: 'Incorrect password.',
+          });
+        }
+        return done(null, dbUser);
+      });
     }
   )
 );
