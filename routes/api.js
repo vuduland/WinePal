@@ -31,27 +31,6 @@ router.post('/add-wine', (req, res, next) => {
   });
 });
 
-router.get('/all-notes', (req, res, next) => {
-  db.Wine.findAll({}).then(notes => {
-    res.json(notes);
-  });
-});
-
-router.post('/add-notes', (req, res, next) => {
-  db.History.create({
-    notes: req.body.notes
-  }).then(notes => {
-    db.Inventory.create({
-      UserId: req.user.id,
-      quantity: req.body.quantity,
-      WineId: notes.id,
-      vendor: req.body.vendor,
-    }).then(inventory => {
-      res.json(inventory);
-    });
-  });
-});
-
 router.get('/all-users', (req, res, next) => {
   db.User.findAll({}).then(winedata => {
     res.json(winedata);
@@ -75,5 +54,31 @@ router.get('/logout', (req, res, next) => {
   res.redirect('/');
 });
 
+router.get('/all-notes', (req, res, next) => {
+  db.Wine.findAll({}).then(notes => {
+    res.json(notes);
+  });
+});
+
+router.post('/add-notes', (req, res, next) => {
+  db.History.create({
+    WineId: req.body.wine,
+    UserId: req.user.id, // 'UserId' = pascal case
+    personal_rating: req.body.personal_rating,
+    notes: req.body.notes,
+    purchase_date: req.body.purchase_date,
+
+  }).then(notes => {
+    res.redirect('/dashboard');
+  });
+});
+
 module.exports = router;
+
+// NOTES ABOUT req...
+
+// req.body vs req.user vs req.params
+// req.body = form data,input data, or what you're getting from a post
+// req.params is used with a get request, and gives you the url params
+// req.user it's a function of passport.js and is semi-magic
 

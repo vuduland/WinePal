@@ -2,21 +2,18 @@ extends layout
 
 block content
   main
-    .intro
-
     .add-notes
         form.add-notes-form(action="/api/add-notes" method="POST")
+
             .input-block
-                label(for="notes") Wine Notes
+                input(name="wine" type="hidden" value=`${wine}`)
+                label(for="notes") Purchase Date:
+                input#purchase_date(type="text" name="purchase_date")
+                label(for="notes") Personal Rating:
+                input#personal_rating(type="text" name="personal_rating")
+                label(for="notes") Notes:
                 input#notes(type="text" name="notes")
             .input-block
-        //- .wine-listing
-          //- h2 Stock
-          //- each listing in userWines
-          //-   .listing
-          //-       h3= listing.Wine.producer
-          //-       p= listing.Wine.vintage
-          //-       p Quantity #{listing.quantity}
-          //-       p Bought from #{listing.vendor}
+            button(type="submit")
 
 
