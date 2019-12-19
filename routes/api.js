@@ -42,11 +42,11 @@ router.post('/add-user', (req, res, next) => {
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
-  }).then(userdata => res.json(userdata)); // sequelize promise
+  }).then(userdata => res.redirect('/login'), passport.authenticate('local')); // sequelize promise
 });
 
 router.post('/login', passport.authenticate('local'), (req, res, next) => {
-  res.json('/welcome');
+  res.redirect('/dashboard');
 });
 
 router.get('/logout', (req, res, next) => {
