@@ -31,6 +31,27 @@ router.post('/add-wine', (req, res, next) => {
   });
 });
 
+router.get('/all-notes', (req, res, next) => {
+  db.Wine.findAll({}).then(notes => {
+    res.json(notes);
+  });
+});
+
+router.post('/add-notes', (req, res, next) => {
+  db.History.create({
+    notes: req.body.notes
+  }).then(notes => {
+    db.Inventory.create({
+      UserId: req.user.id,
+      quantity: req.body.quantity,
+      WineId: notes.id,
+      vendor: req.body.vendor,
+    }).then(inventory => {
+      res.json(inventory);
+    });
+  });
+});
+
 router.get('/all-users', (req, res, next) => {
   db.User.findAll({}).then(winedata => {
     res.json(winedata);
@@ -42,11 +63,11 @@ router.post('/add-user', (req, res, next) => {
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
-  }).then(userdata => res.json(userdata)); // sequelize promise
+  }).then(userdata => res.redirect('/login'), passport.authenticate('local')); // sequelize promise
 });
 
 router.post('/login', passport.authenticate('local'), (req, res, next) => {
-  res.json('/welcome');
+  res.redirect('/dashboard');
 });
 
 router.get('/logout', (req, res, next) => {
@@ -55,3 +76,4 @@ router.get('/logout', (req, res, next) => {
 });
 
 module.exports = router;
+
