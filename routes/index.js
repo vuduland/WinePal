@@ -43,7 +43,9 @@ router.get('/dashboard', (req, res, next) => {
 });
 
 router.get('/register', function (req, res, next) {
+
   try {
+
   res.render('register', { title: 'Registration' });
   } catch (err) {
     console.log(err);
@@ -64,6 +66,10 @@ router.get('/notes/:Wine', function (req, res, next) {
   } catch (err) {
     console.log(err);
   }
+});
+
+router.get('/notes/:Wine', function (req, res, next) {
+  res.render('notes', { title: 'Notes', Wine: req.params.Wine })
 });
 
 module.exports = router;
