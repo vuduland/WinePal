@@ -1,5 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  main
+    .intro
+      h1 The best way to manage your wine collection
+      .cta
+        .left
+          p Already a member?
+          a(href='./login').signup-btn Log in
+        .right
+          p It's free to join!
+          a(href='./register').signup-btn Sign up
+  .hero-back

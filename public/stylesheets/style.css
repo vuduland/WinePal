@@ -1,38 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap');
-
-$main: #6d1a1a;
-$light: rgb(249, 250, 212);
-
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
 * {
-  font-family: 'Nunito Sans', sans-serif;
-}
+  font-family: 'Nunito Sans', sans-serif; }
+
 body {
   margin: 0;
-  background: $main;
-  color: $light;
+  background: #6d1a1a;
+  color: #f9fad4;
   box-shadow: inset 0px 0px 100px 0px rgba(0, 0, 0, 0.705);
-  min-height: 100vh;
-}
+  min-height: 100vh; }
+
 header {
   position: fixed;
   width: 100%;
   top: 0;
-  padding: 30px;
-  .logo {
+  padding: 30px; }
+  header .logo {
     font-size: 30px;
-    font-weight: 700;
-  }
-}
+    font-weight: 700; }
+
 .hero-back {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background-image: url('/images/boxes-of-wines.jpg');
+  background-image: url("/images/boxes-of-wines.jpg");
   filter: sepia(1) blur(3px) opacity(0.15);
-  z-index: -1;
-}
+  z-index: -1; }
+
 .intro {
   text-align: center;
   min-height: 100vh;
@@ -41,50 +36,40 @@ header {
   justify-content: center;
   align-items: center;
   max-width: 900px;
-  margin: 0px auto;
-  h1 {
-    font-size: 70px;
-  }
-}
+  margin: 0px auto; }
+  .intro h1 {
+    font-size: 70px; }
 
 .cta {
   text-align: center;
   display: flex;
-  align-items: center;
-  div {
+  align-items: center; }
+  .cta div {
     height: 100%;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     padding: 20px;
-
-    margin-top: auto;
-  }
-
-  button {
+    margin-top: auto; }
+  .cta button {
     background-color: transparent;
     font-size: 20px;
     border-radius: 1000px;
-    border: 2px solid $light;
+    border: 2px solid #f9fad4;
     padding: 5px 50px;
-    color: $light;
-  }
-  .signup-btn {
-    background-color: $light;
-    color: $main;
-    // font-size: 30px;
-
-    margin-top: auto;
-  }
-}
+    color: #f9fad4; }
+  .cta .signup-btn {
+    background-color: #f9fad4;
+    color: #6d1a1a;
+    margin-top: auto; }
 
 .add-wine {
   display: block;
-  max-width: 500px;
-  label,
-  input {
+  max-width: 500px; }
+  .add-wine label,
+  .add-wine input {
     display: block;
     width: 100%;
-    padding: 5px;
-  }
-}
+    padding: 5px; }
+
+/*# sourceMappingURL=style.css.map */

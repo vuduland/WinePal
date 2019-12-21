@@ -1,0 +1,69 @@
+extends layout
+
+block content
+  main
+    .intro
+      h1 Welcome, #{name}!
+      h2 Welcome, #{id}
+      h2= email
+
+    .add-wine
+        h2 Add a wine
+        form.add-wine-form(action="/api/add-wine" method="POST")
+            .input-block
+                label(for="quantity") Quantity:
+                input#quantity(type="number" name="quantity")
+                label(for="vendor") Vendor:
+                input#vendor(type="text" name="vendor")
+                label(for="vintage") Vintage:
+                input#vintage(type="text" name="vintage")
+                label(for="varietal") Varietal:
+                input#varietal(type="text" name="varietal")
+                label(for="producer") Producer:
+                input#producer(type="text" name="producer")
+                label(for="region") Region:
+                input#region(type="text" name="region")
+                label(for="country") Country:
+                input#country(type="text" name="country")
+                label(for="ageability") Ageability (1-10):
+                input#ageability(type="number" name="ageability_index")
+                label(for="purchased") Purchase Date:
+                input#purchase(type="date" name="purchase_date")
+                input#wine(name="wine" type="hidden" value=`$ {wine}`)
+                label(for="rating") Personal Rating:
+                input#rating(type="number" name="rating")
+                label(for="notes") Notes:
+                input#notes(type="text" name="notes")
+                button(type="submit") Add
+                //- button(type="")
+            .input-block
+        .wine-listing
+          h2 Stock
+          each listing, history in userWines
+            .listing
+                div
+                  h3 Varietal: #{listing.Wine.varietal}
+                  h4 #[i Source: #{listing.Wine.producer}]
+                  p #[i Vintage: #{listing.Wine.vintage}]
+                  p #[i Quantity: #{listing.quantity}]
+                  p #[i Vendor: #{listing.vendor}]
+                  p #[i Personal Notes: #{history.notes}]
+                  br
+
+
+
+
+
+
+
+
+    //- doesn't work
+      //- .logout
+      //-     form(action="/api/logout" method="GET")
+      //-       .input-block
+      //-         label#logout(for="logout") Logout?
+      //-         input#out(name="logout" type="toggle")
+      //-         button(type="logout" )
+      //-       .input-block
+
+

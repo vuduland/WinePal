@@ -4,10 +4,10 @@
  * Module dependencies.
  */
 
-var app = require('../app');
 var debug = require('debug')('project-two:server');
 var http = require('http');
-
+var app = require('../app');
+var db = require('../models');
 /**
  * Get port from environment and store in Express.
  */
@@ -24,11 +24,11 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
-
+db.sequelize.sync({ force: false }).then(function() {
+  server.listen(port);
+  server.on('error', onError);
+  server.on('listening', onListening);
+});
 /**
  * Normalize a port into a number, string, or false.
  */
@@ -58,18 +58,16 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  var bind = typeof port === 'string' ? `Pipe ${port}` : `Port ${port}`;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
+      console.error(`${bind} requires elevated privileges`);
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
+      console.error(`${bind} is already in use`);
       process.exit(1);
       break;
     default:
@@ -83,8 +81,6 @@ function onError(error) {
 
 function onListening() {
   var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  var bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
+  debug(`Listening on ${bind}`);
 }
