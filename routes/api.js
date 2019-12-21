@@ -54,4 +54,32 @@ router.get('/logout', (req, res, next) => {
   res.redirect('/');
 });
 
+router.get('/all-notes', (req, res, next) => {
+  db.Wine.findAll({}).then(notes => {
+    res.json(notes);
+  });
+});
+
+router.post('/notes', (req, res, next) => {
+  db.History.create({
+    Wine: req.body,
+    WineId: req.body.wine,
+    UserId: req.user.id, // 'UserId' = pascal case
+    personal_rating: req.body.personal_rating,
+    notes: req.body.notes,
+    purchase_date: req.body.purchase_date,
+
+  }).then(History => {
+    res.redirect('/dashboard');
+  });
+});
+
 module.exports = router;
+
+// NOTES ABOUT req...
+
+// req.body vs req.user vs req.params
+// req.body = form data,input data, or what you're getting from a post
+// req.params is used with a get request, and gives you the url params
+// req.user is a function of passport.js and is semi-magic
+

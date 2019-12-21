@@ -6,7 +6,7 @@ var db = require('../models');
 var passport = require('../config/passport');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('index', { title: '🍷 Wine Pal 🍷' });
 });
 
@@ -37,12 +37,16 @@ router.get('/dashboard', (req, res, next) => {
   }
 });
 
-router.get('/register', function(req, res, next) {
+router.get('/register', function (req, res, next) {
   res.render('register', { title: 'Registration' });
 });
 
-router.get('/login', function(req, res, next) {
+router.get('/login', function (req, res, next) {
   res.render('login', { title: 'Login' });
+});
+
+router.get('/notes/:Wine', function (req, res, next) {
+  res.render('notes', { title: 'Notes', Wine: req.params.Wine })
 });
 
 module.exports = router;

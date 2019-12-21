@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   const Wine = sequelize.define('Wine', {
     id: {
       type: DataTypes.INTEGER(11),
@@ -40,13 +40,6 @@ module.exports = function(sequelize, DataTypes) {
       comment: 'null',
     },
   });
-  // Wine.associate = models => {
-  //   Wine.belongsTo(models.Inventory, {
-  //     foreignKey: {
-  //       allowNull: false,
-  //     },
-  //   });
-  // };
 
   return Wine;
 };
