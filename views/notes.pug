@@ -3,6 +3,7 @@ extends layout
 block content
   main
     .add-notes
+        button(name="Add-Notes" type="submit" )
         form.add-notes-form(action="/api/add-notes" method="POST")
 
             .input-block
