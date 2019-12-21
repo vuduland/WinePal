@@ -40,12 +40,17 @@ router.post('/add-wine', (req, res, next) => {
 });
 
 router.get('/all-users', (req, res, next) => {
+
     try {
+
         db.User.findAll({}).then(winedata => {
             res.json(winedata);
         });
+
     } catch (err) {
         console.log(err);
+        // error page here (unauthorized)
+
     }
 });
 

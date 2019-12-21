@@ -13,6 +13,7 @@ router.get('/', function (req, res, next) {
 router.get('/dashboard', (req, res, next) => {
     if (!req.user) {
         res.json({});
+        //add redirect to login
     } else {
         db.Inventory.findAll({
             where: {
@@ -51,6 +52,10 @@ router.get('/login', function (req, res, next) {
     } catch (err) {
         console.log(err);
     }
+});
+
+router.get('/goback', function (req, res, next) {
+    res.render('goback', { title: 'Oops' });
 });
 
 module.exports = router;
