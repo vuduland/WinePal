@@ -1,18 +1,18 @@
 extends layout
 
 block content
-	main
-		.intro
-			h1 Login
-			.cta
-				.left
-					form(action="/api/login" method="POST")
-						label(for="email") E-mail:
-						input#email(name="email" type="email")
-						label(for="password") Password:
-						input#password(name="password" type="password")
-						button(type="submit") Login
-	.hero-back
+  main
+    .intro
+      h1 Login
+      .cta
+        .left
+          form(action="/api/login" method="POST")
+            label(for="email") E-mail:
+            input#email(name="email" type="email")
+            label(for="password") Password:
+            input#password(name="password" type="password")
+            button(type="submit") Login
+  .hero-back
 
-		// input#email is pug shorthand for id
-		// javascript comments work too
+            // input#email is pug shorthand for id
+            // javascript comments work too
