@@ -7,7 +7,11 @@ var passport = require('../config/passport');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', { title: '🍷 Wine Pal 🍷' });
+  try {
+    res.render('index', { title: '🍷 Wine Pal 🍷' });
+  } catch(err) {
+    console.log(err);
+  }
 });
 
 router.get('/dashboard', (req, res, next) => {
@@ -40,11 +44,29 @@ router.get('/dashboard', (req, res, next) => {
 
 
 router.get('/register', function (req, res, next) {
+
+  try {
+
   res.render('register', { title: 'Registration' });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.get('/login', function (req, res, next) {
+  try {
   res.render('login', { title: 'Login' });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+router.get('/notes/:Wine', function (req, res, next) {
+  try {
+  res.render('notes', { title: 'Notes', Wine: req.params.Wine })
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.get('/notes/:Wine', function (req, res, next) {
