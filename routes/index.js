@@ -45,8 +45,8 @@ router.get('/login', function (req, res, next) {
   res.render('login', { title: 'Login' });
 });
 
-router.get('/add-notes/:wine', function (req, res, next) {
-  res.render('notes', { title: 'Notes', wine: req.params.wine })
+router.get('/notes/:Wine', function (req, res, next) {
+  res.render('notes', { title: 'Notes', Wine: req.params.Wine })
 });
 
 module.exports = router;

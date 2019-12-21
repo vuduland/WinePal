@@ -11,7 +11,7 @@ block content
         h2 Add a wine
         form.add-wine-form(action="/api/add-wine" method="POST")
             .input-block
-                label(for="vintage") Quantity:
+                label(for="quantity") Quantity:
                 input#quantity(type="number" name="quantity")
                 label(for="vendor") Vendor:
                 input#vendor(type="text" name="vendor")
@@ -27,12 +27,19 @@ block content
                 input#country(type="text" name="country")
                 label(for="ageability") Ageability (1-10):
                 input#ageability(type="number" name="ageability_index")
+                label(for="purchased") Purchase Date:
+                input#purchase(type="date" name="purchase_date")
+                input#wine(name="wine" type="hidden" value=`$ {wine}`)
+                label(for="rating") Personal Rating:
+                input#rating(type="number" name="rating")
+                label(for="notes") Notes:
+                input#notes(type="text" name="notes")
                 button(type="submit") Add
                 //- button(type="")
             .input-block
         .wine-listing
           h2 Stock
-          each listing in userWines
+          each listing, history in userWines
             .listing
                 div
                   h3 Varietal: #{listing.Wine.varietal}
@@ -40,7 +47,7 @@ block content
                   p #[i Vintage: #{listing.Wine.vintage}]
                   p #[i Quantity: #{listing.quantity}]
                   p #[i Vendor: #{listing.vendor}]
-                  p #[i Personal Notes:]
+                  p #[i Personal Notes: #{history.notes}]
                   br
 
 
