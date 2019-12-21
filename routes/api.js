@@ -6,9 +6,15 @@ var db = require('../models');
 var passport = require('../config/passport');
 
 router.get('/all-wines', (req, res, next) => {
+  try {
+
   db.Wine.findAll({}).then(winedata => {
     res.json(winedata);
   });
+
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.post('/add-wine', (req, res, next) => {
@@ -32,26 +38,45 @@ router.post('/add-wine', (req, res, next) => {
 });
 
 router.get('/all-users', (req, res, next) => {
+
+  try {
   db.User.findAll({}).then(winedata => {
     res.json(winedata);
   });
+
+  } catch (err) {
+      console.log(err);
+      // error page here (unauthorized access?)
+  }
 });
 
 router.post('/add-user', (req, res, next) => {
+  try {
   db.User.create({
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
   }).then(userdata => res.redirect('/login'), passport.authenticate('local')); // sequelize promise
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.post('/login', passport.authenticate('local'), (req, res, next) => {
-  res.redirect('/dashboard');
+  try {
+    res.redirect('/dashboard');
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.get('/logout', (req, res, next) => {
+  try {
   req.logout();
   res.redirect('/');
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.get('/all-notes', (req, res, next) => {
