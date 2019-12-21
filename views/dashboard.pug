@@ -34,10 +34,16 @@ block content
           h2 Stock
           each listing in userWines
             .listing
-                h3 Source: #{listing.Wine.producer}
-                p Vintage: #{listing.Wine.vintage}
-                p Quantity: #{listing.quantity}
-                p Vendor: #{listing.vendor}
+                div
+                  h3 Varietal: #{listing.Wine.varietal}
+                  h4 #[i Source: #{listing.Wine.producer}]
+                  p #[i Vintage: #{listing.Wine.vintage}]
+                  p #[i Quantity: #{listing.quantity}]
+                  p #[i Vendor: #{listing.vendor}]
+                  p #[i Personal Notes:]
+                  br
+
+
 
 
 
