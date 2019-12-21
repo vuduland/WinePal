@@ -12,7 +12,7 @@ router.get('/', function (req, res, next) {
 
 router.get('/dashboard', (req, res, next) => {
   if (!req.user) {
-    res.json({});
+    res.redirect(302, '../login')
   } else {
     db.Inventory.findAll({
       where: {
@@ -36,6 +36,8 @@ router.get('/dashboard', (req, res, next) => {
     });
   }
 });
+
+
 
 router.get('/register', function (req, res, next) {
   res.render('register', { title: 'Registration' });
