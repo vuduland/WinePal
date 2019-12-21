@@ -80,5 +80,5 @@ module.exports = router;
 // req.body vs req.user vs req.params
 // req.body = form data,input data, or what you're getting from a post
 // req.params is used with a get request, and gives you the url params
-// req.user it's a function of passport.js and is semi-magic
+// req.user is a function of passport.js and is semi-magic
 

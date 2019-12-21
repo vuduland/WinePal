@@ -11,21 +11,21 @@ block content
         h2 Add a wine
         form.add-wine-form(action="/api/add-wine" method="POST")
             .input-block
-                label(for="vintage") Quantity
+                label(for="vintage") Quantity:
                 input#quantity(type="number" name="quantity")
-                label(for="vendor") Purchased from
+                label(for="vendor") Vendor:
                 input#vendor(type="text" name="vendor")
-                label(for="vintage") Vintage
+                label(for="vintage") Vintage:
                 input#vintage(type="text" name="vintage")
-                label(for="varietal") Varietal
+                label(for="varietal") Varietal:
                 input#varietal(type="text" name="varietal")
-                label(for="producer") Producer
+                label(for="producer") Producer:
                 input#producer(type="text" name="producer")
-                label(for="region") Region
+                label(for="region") Region:
                 input#region(type="text" name="region")
-                label(for="country") Country
+                label(for="country") Country:
                 input#country(type="text" name="country")
-                label(for="ageability") Ageability (1-10)
+                label(for="ageability") Ageability (1-10):
                 input#ageability(type="number" name="ageability_index")
                 button(type="submit") Add
                 //- button(type="")
@@ -34,10 +34,10 @@ block content
           h2 Stock
           each listing in userWines
             .listing
-                h3= listing.Wine.producer
-                p= listing.Wine.vintage
-                p Quantity #{listing.quantity}
-                p Bought from #{listing.vendor}
+                h3 Source: #{listing.Wine.producer}
+                p Vintage: #{listing.Wine.vintage}
+                p Quantity: #{listing.quantity}
+                p Vendor: #{listing.vendor}
 
 
 
