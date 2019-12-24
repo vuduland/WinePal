@@ -6,17 +6,17 @@ var db = require('../models');
 var passport = require('../config/passport');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', function(req, res, next) {
   try {
     res.render('index', { title: '🍷 Wine Pal 🍷' });
-  } catch(err) {
+  } catch (err) {
     console.log(err);
   }
 });
 
 router.get('/dashboard', (req, res, next) => {
   if (!req.user) {
-    res.redirect(302, '../login')
+    res.redirect(302, '../login');
   } else {
     db.Inventory.findAll({
       where: {
@@ -41,36 +41,32 @@ router.get('/dashboard', (req, res, next) => {
   }
 });
 
-
-
-router.get('/register', function (req, res, next) {
-
+router.get('/register', function(req, res, next) {
   try {
-
-  res.render('register', { title: 'Registration' });
+    res.render('register', { title: 'Registration' });
   } catch (err) {
     console.log(err);
   }
 });
 
-router.get('/login', function (req, res, next) {
+router.get('/login', function(req, res, next) {
   try {
-  res.render('login', { title: 'Login' });
+    res.render('login', { title: 'Login' });
   } catch (err) {
     console.log(err);
   }
 });
 
-router.get('/notes/:Wine', function (req, res, next) {
+router.get('/notes/:Wine', function(req, res, next) {
   try {
-  res.render('notes', { title: 'Notes', Wine: req.params.Wine })
+    res.render('notes', { title: 'Notes', Wine: req.params.Wine });
   } catch (err) {
     console.log(err);
   }
 });
 
-router.get('/notes/:Wine', function (req, res, next) {
-  res.render('notes', { title: 'Notes', Wine: req.params.Wine })
+router.get('/notes/:Wine', function(req, res, next) {
+  res.render('notes', { title: 'Notes', Wine: req.params.Wine });
 });
 
 module.exports = router;

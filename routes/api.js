@@ -7,11 +7,9 @@ var passport = require('../config/passport');
 
 router.get('/all-wines', (req, res, next) => {
   try {
-
-  db.Wine.findAll({}).then(winedata => {
-    res.json(winedata);
-  });
-
+    db.Wine.findAll({}).then(winedata => {
+      res.json(winedata);
+    });
   } catch (err) {
     console.log(err);
   }
@@ -38,25 +36,23 @@ router.post('/add-wine', (req, res, next) => {
 });
 
 router.get('/all-users', (req, res, next) => {
-
   try {
-  db.User.findAll({}).then(winedata => {
-    res.json(winedata);
-  });
-
+    db.User.findAll({}).then(winedata => {
+      res.json(winedata);
+    });
   } catch (err) {
-      console.log(err);
-      // error page here (unauthorized access?)
+    console.log(err);
+    // error page here (unauthorized access?)
   }
 });
 
 router.post('/add-user', (req, res, next) => {
   try {
-  db.User.create({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-  }).then(userdata => res.redirect('/login'), passport.authenticate('local')); // sequelize promise
+    db.User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+    }).then(userdata => res.redirect('/login'), passport.authenticate('local')); // sequelize promise
   } catch (err) {
     console.log(err);
   }
@@ -72,8 +68,8 @@ router.post('/login', passport.authenticate('local'), (req, res, next) => {
 
 router.get('/logout', (req, res, next) => {
   try {
-  req.logout();
-  res.redirect('/');
+    req.logout();
+    res.redirect('/');
   } catch (err) {
     console.log(err);
   }
@@ -93,7 +89,6 @@ router.post('/notes', (req, res, next) => {
     personal_rating: req.body.personal_rating,
     notes: req.body.notes,
     purchase_date: req.body.purchase_date,
-
   }).then(History => {
     res.redirect('/dashboard');
   });
@@ -113,7 +108,6 @@ router.post('/notes', (req, res, next) => {
     personal_rating: req.body.personal_rating,
     notes: req.body.notes,
     purchase_date: req.body.purchase_date,
-
   }).then(History => {
     res.redirect('/dashboard');
   });
@@ -127,4 +121,3 @@ module.exports = router;
 // req.body = form data,input data, or what you're getting from a post
 // req.params is used with a get request, and gives you the url params
 // req.user is a function of passport.js and is semi-magic
-
