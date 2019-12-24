@@ -1,90 +1,340 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
 
 $main: #6d1a1a;
-$light: rgb(249, 250, 212);
+$mid: #b48a4b;
+$light: #d8dab8;
+$medium-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.178);
 
 * {
-  font-family: 'Nunito Sans', sans-serif;
+    font-family: "Nunito Sans", sans-serif;
+    box-sizing: border-box;
 }
 body {
-  margin: 0;
-  background: $main;
-  color: $light;
-  box-shadow: inset 0px 0px 100px 0px rgba(0, 0, 0, 0.705);
-  min-height: 100vh;
+    margin: 0;
+    background: $main;
+    color: $light;
+    // box-shadow: inset 0px 0px 100px 0px rgba(0, 0, 0, 0.705);
+    min-height: 100vh;
 }
 header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  padding: 30px;
-  .logo {
-    font-size: 30px;
-    font-weight: 700;
-  }
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 0px 20px;
+    border-bottom: 1px solid $mid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $main;
+    z-index: 100;
+    height: 70px;
+    .logo {
+        font-size: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-left: 10px;
+        svg {
+            height: 45px;
+            display: block;
+            fill: $light;
+        }
+    }
+    .menu-button {
+        padding: 10px 20px;
+        svg {
+            fill: $light;
+            height: 30px;
+            width: 30px;
+            display: block;
+        }
+    }
+}
+main {
+    margin-top: 70px;
 }
 .hero-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-image: url('/images/boxes-of-wines.jpg');
-  filter: sepia(1) blur(3px) opacity(0.15);
-  z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("/images/boxes-of-wines.jpg");
+    filter: sepia(1) blur(3px) opacity(0.15);
+    z-index: -1;
 }
 .intro {
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 900px;
-  margin: 0px auto;
-  h1 {
-    font-size: 70px;
-  }
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    margin: 60px auto;
+    h1 {
+        font-size: 70px;
+    }
 }
 
 .cta {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  div {
-    height: 100%;
+    text-align: center;
     display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 20px;
+    align-items: center;
+    div {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: 20px;
 
-    margin-top: auto;
-  }
+        margin-top: auto;
+    }
 
-  button {
-    background-color: transparent;
-    font-size: 20px;
-    border-radius: 1000px;
-    border: 2px solid $light;
-    padding: 5px 50px;
-    color: $light;
-  }
-  .signup-btn {
-    background-color: $light;
-    color: $main;
-    // font-size: 30px;
+    button {
+        background-color: transparent;
+        font-size: 20px;
+        border-radius: 1000px;
+        border: 2px solid $light;
+        padding: 5px 50px;
+        color: $light;
+    }
+    .signup-btn {
+        background-color: $light;
+        color: $main;
+        // font-size: 30px;
 
-    margin-top: auto;
-  }
+        margin-top: auto;
+    }
 }
 
 .add-wine {
-  display: block;
-  max-width: 500px;
-  label,
-  input {
     display: block;
+    position: fixed;
+    top: 70px;
+    left: 0px;
+    height: calc(100vh - 70px);
     width: 100%;
-    padding: 5px;
-  }
+    background-color: $mid;
+    padding: 40px;
+    overflow-y: auto;
+    &.hidden {
+        display: none;
+    }
+    .add-wine-inner {
+        max-width: 600px;
+        margin: 20px auto;
+    }
+    label,
+    input {
+        display: block;
+        width: 100%;
+        padding: 5px;
+    }
+    input {
+        background: transparentize($light, $amount: 0.7);
+        appearance: none;
+        -webkit-appearance: none;
+        border: none;
+        border-bottom: 1px solid $main;
+    }
+    label {
+        color: $main;
+        font-weight: 700;
+        margin-top: 20px;
+    }
+    h2 {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        color: $main;
+    }
+    .two-col {
+        display: flex;
+        justify-content: space-between;
+        & > div {
+            flex-basis: calc(50% - 20px);
+        }
+    }
+    button {
+        margin: 20px 0px;
+        background-color: $main;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 30px;
+        float: right;
+        color: $light;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+}
+
+.dash-top {
+    display: flex;
+    border-bottom: 1px solid $mid;
+    h2 {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        color: $mid;
+    }
+
+    .dash-main {
+        flex-basis: 50%;
+        min-height: 50vh;
+        border-right: 1px solid $mid;
+        .overview {
+            padding-bottom: 30px;
+            border-bottom: 1px solid $mid;
+            padding: 20px 30px;
+        }
+        .recent-notes {
+            padding: 20px 30px;
+            padding-top: 20px;
+        }
+        .metrics {
+            max-width: 500px;
+            margin: 50px auto;
+            .row {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-bottom: 1px solid $mid;
+
+                .label {
+                    color: $mid;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    letter-spacing: 2px;
+                }
+            }
+        }
+    }
+    .dash-list {
+        flex-basis: 50%;
+        padding: 20px 30px;
+        padding-left: 60px;
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        .listing {
+            background: $light;
+            box-shadow: $medium-shadow;
+            border-radius: 6px;
+            // padding: 20px;
+            color: $main;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 15px;
+            p,
+            h3,
+            h4 {
+                margin: 0;
+            }
+            & > div {
+                margin: 20px 10px;
+            }
+            .quantity {
+                display: block;
+                position: absolute;
+                left: 0;
+                margin: 0;
+                transform: translateX(-50%);
+                p {
+                    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.158);
+                    font-size: 20px;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 1000px;
+                    background: $mid;
+                    color: $light;
+                    width: 60px;
+                    height: 60px;
+                    padding: 10px;
+                }
+            }
+            .title {
+                padding: 10px;
+                h3 {
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-weight: 700;
+                }
+                h4 {
+                    font-weight: 400;
+                }
+            }
+            .details {
+                border-left: 1px solid $main;
+                margin-left: 10px;
+                padding: 10px 20px;
+                font-size: 14px;
+                line-height: 1.7;
+                strong {
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-size: 12px;
+                    margin-right: 5px;
+                }
+            }
+            .actions {
+                margin: 5px;
+                margin-left: auto;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                justify-content: space-between;
+                button {
+                    background-color: transparent;
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    padding: 5px 12px;
+                    svg {
+                        height: 20px;
+                        width: 20px;
+                        fill: $mid;
+                    }
+                }
+            }
+        }
+        .add-wine-button {
+            margin-top: auto;
+            // width: calc(50% - 40px);
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $mid;
+            border: none;
+            box-shadow: $medium-shadow;
+            padding: 5px 30px;
+
+            border-radius: 10px;
+
+            p {
+                color: $main;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+            svg {
+                margin-right: 10px;
+                path {
+                    fill: $main;
+                }
+            }
+        }
+    }
 }

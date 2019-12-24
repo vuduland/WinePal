@@ -1,22 +1,45 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
 * {
-  font-family: 'Nunito Sans', sans-serif; }
+  font-family: "Nunito Sans", sans-serif;
+  box-sizing: border-box; }
 
 body {
   margin: 0;
   background: #6d1a1a;
-  color: #f9fad4;
-  box-shadow: inset 0px 0px 100px 0px rgba(0, 0, 0, 0.705);
+  color: #d8dab8;
   min-height: 100vh; }
 
 header {
   position: fixed;
   width: 100%;
   top: 0;
-  padding: 30px; }
+  padding: 0px 20px;
+  border-bottom: 1px solid #b48a4b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #6d1a1a;
+  z-index: 100;
+  height: 70px; }
   header .logo {
     font-size: 30px;
-    font-weight: 700; }
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 10px; }
+    header .logo svg {
+      height: 45px;
+      display: block;
+      fill: #d8dab8; }
+  header .menu-button {
+    padding: 10px 20px; }
+    header .menu-button svg {
+      fill: #d8dab8;
+      height: 30px;
+      width: 30px;
+      display: block; }
+
+main {
+  margin-top: 70px; }
 
 .hero-back {
   position: absolute;
@@ -36,7 +59,7 @@ header {
   justify-content: center;
   align-items: center;
   max-width: 900px;
-  margin: 0px auto; }
+  margin: 60px auto; }
   .intro h1 {
     font-size: 70px; }
 
@@ -55,21 +78,201 @@ header {
     background-color: transparent;
     font-size: 20px;
     border-radius: 1000px;
-    border: 2px solid #f9fad4;
+    border: 2px solid #d8dab8;
     padding: 5px 50px;
-    color: #f9fad4; }
+    color: #d8dab8; }
   .cta .signup-btn {
-    background-color: #f9fad4;
+    background-color: #d8dab8;
     color: #6d1a1a;
     margin-top: auto; }
 
 .add-wine {
   display: block;
-  max-width: 500px; }
+  position: fixed;
+  top: 70px;
+  left: 0px;
+  height: calc(100vh - 70px);
+  width: 100%;
+  background-color: #b48a4b;
+  padding: 40px;
+  overflow-y: auto; }
+  .add-wine.hidden {
+    display: none; }
+  .add-wine .add-wine-inner {
+    max-width: 600px;
+    margin: 20px auto; }
   .add-wine label,
   .add-wine input {
     display: block;
     width: 100%;
     padding: 5px; }
+  .add-wine input {
+    background: rgba(216, 218, 184, 0.3);
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-bottom: 1px solid #6d1a1a; }
+  .add-wine label {
+    color: #6d1a1a;
+    font-weight: 700;
+    margin-top: 20px; }
+  .add-wine h2 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    color: #6d1a1a; }
+  .add-wine .two-col {
+    display: flex;
+    justify-content: space-between; }
+    .add-wine .two-col > div {
+      flex-basis: calc(50% - 20px); }
+  .add-wine button {
+    margin: 20px 0px;
+    background-color: #6d1a1a;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 30px;
+    float: right;
+    color: #d8dab8;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+
+.dash-top {
+  display: flex;
+  border-bottom: 1px solid #b48a4b; }
+  .dash-top h2 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    color: #b48a4b; }
+  .dash-top .dash-main {
+    flex-basis: 50%;
+    min-height: 50vh;
+    border-right: 1px solid #b48a4b; }
+    .dash-top .dash-main .overview {
+      padding-bottom: 30px;
+      border-bottom: 1px solid #b48a4b;
+      padding: 20px 30px; }
+    .dash-top .dash-main .recent-notes {
+      padding: 20px 30px;
+      padding-top: 20px; }
+    .dash-top .dash-main .metrics {
+      max-width: 500px;
+      margin: 50px auto; }
+      .dash-top .dash-main .metrics .row {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #b48a4b; }
+        .dash-top .dash-main .metrics .row .label {
+          color: #b48a4b;
+          font-size: 16px;
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: 2px; }
+  .dash-top .dash-list {
+    flex-basis: 50%;
+    padding: 20px 30px;
+    padding-left: 60px;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column; }
+    .dash-top .dash-list .listing {
+      background: #d8dab8;
+      box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.178);
+      border-radius: 6px;
+      color: #6d1a1a;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-left: 40px;
+      margin-bottom: 15px; }
+      .dash-top .dash-list .listing p,
+      .dash-top .dash-list .listing h3,
+      .dash-top .dash-list .listing h4 {
+        margin: 0; }
+      .dash-top .dash-list .listing > div {
+        margin: 20px 10px; }
+      .dash-top .dash-list .listing .quantity {
+        display: block;
+        position: absolute;
+        left: 0;
+        margin: 0;
+        transform: translateX(-50%); }
+        .dash-top .dash-list .listing .quantity p {
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.158);
+          font-size: 20px;
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 1000px;
+          background: #b48a4b;
+          color: #d8dab8;
+          width: 60px;
+          height: 60px;
+          padding: 10px; }
+      .dash-top .dash-list .listing .title {
+        padding: 10px; }
+        .dash-top .dash-list .listing .title h3 {
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: 700; }
+        .dash-top .dash-list .listing .title h4 {
+          font-weight: 400; }
+      .dash-top .dash-list .listing .details {
+        border-left: 1px solid #6d1a1a;
+        margin-left: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
+        line-height: 1.7; }
+        .dash-top .dash-list .listing .details strong {
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-size: 12px;
+          margin-right: 5px; }
+      .dash-top .dash-list .listing .actions {
+        margin: 5px;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between; }
+        .dash-top .dash-list .listing .actions button {
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          padding: 5px 12px; }
+          .dash-top .dash-list .listing .actions button svg {
+            height: 20px;
+            width: 20px;
+            fill: #b48a4b; }
+    .dash-top .dash-list .add-wine-button {
+      margin-top: auto;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #b48a4b;
+      border: none;
+      box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.178);
+      padding: 5px 30px;
+      border-radius: 10px; }
+      .dash-top .dash-list .add-wine-button p {
+        color: #6d1a1a;
+        font-weight: 700;
+        text-transform: uppercase; }
+      .dash-top .dash-list .add-wine-button svg {
+        margin-right: 10px; }
+        .dash-top .dash-list .add-wine-button svg path {
+          fill: #6d1a1a; }
 
 /*# sourceMappingURL=style.css.map */
