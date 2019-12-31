@@ -29,6 +29,8 @@ NODE_ENV=development
 #### Add pathing to dropdown menu;
 #### Link notes body to notes div and make them show up when focused on each wine;
 #### Add functionality to buttons in listed wines;
+      -Edit details
+      -Delete
 #### Change ageability to ageability-index on page;
 #### Add expiry date to form and wine list;
 #### Make pages and routes || present the entirety of the data on each wine to the notes Div, rather than creating and linking      to   another page for each wine;
@@ -38,3 +40,5 @@ NODE_ENV=development
 #### Get server up and running at my house and make sure it works with app;
 #### Draft final copy of README.md
 #### Design presentation;
+#### Site content & copy
+#### Display "Your Collection" with details
