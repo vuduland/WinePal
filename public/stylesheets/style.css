@@ -164,8 +164,25 @@ main {
       padding-top: 20px; }
       .dash-top .dash-main .recent-notes .note {
         border: 1px solid #b48a4b;
-        padding: 20px;
-        margin-bottom: 15px; }
+        padding: 10px 20px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column; }
+        .dash-top .dash-main .recent-notes .note .note-date {
+          color: #b48a4b;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 12px; }
+        .dash-top .dash-main .recent-notes .note .note-wine {
+          color: #b48a4b;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 12px;
+          margin-left: auto; }
+          .dash-top .dash-main .recent-notes .note .note-wine span {
+            margin: 0px 3px; }
     .dash-top .dash-main .metrics {
       max-width: 500px;
       margin: 50px auto; }

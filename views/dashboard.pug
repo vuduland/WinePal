@@ -20,9 +20,9 @@ block content
           h2 Recent Notes
           each note in userNotes
             .note
-              p= note.dataValues.createdAt
+              p.note-date= moment(note.dataValues.createdAt).fromNow()
               p= note.dataValues.notes
-              p= note.dataValues.Wine.vintage
+              p.note-wine= note.dataValues.Wine.vintage
                 span= note.dataValues.Wine.producer
                 span= note.dataValues.Wine.varietal 
 
