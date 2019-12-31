@@ -199,8 +199,29 @@ main {
 
             .note {
                 border: 1px solid $mid;
-                padding: 20px;
+                padding: 10px 20px;
                 margin-bottom: 15px;
+                display: flex;
+                flex-direction: column;
+
+                .note-date {
+                    color: $mid;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-size: 12px;
+                }
+                .note-wine {
+                    color: $mid;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-size: 12px;
+                    margin-left: auto;
+                    span {
+                        margin: 0px 3px;
+                    }
+                }
             }
         }
         .metrics {

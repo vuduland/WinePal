@@ -13,6 +13,8 @@
     "express": "~4.16.1",
     "express-session": "^1.17.0",
     "http-errors": "~1.6.3",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
     "morgan": "~1.9.1",
     "mysql2": "^2.0.2",
     "node-sass-middleware": "0.11.0",
