@@ -7,6 +7,9 @@ var passport = require('../config/passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  if (req.user) {
+    res.redirect('/dashboard');
+  }
   try {
     res.render('index', { title: '🍷 Wine Pal 🍷' });
   } catch (err) {
@@ -30,12 +33,27 @@ router.get('/dashboard', (req, res, next) => {
         },
       ],
     }).then(userWines => {
-      console.log(userWines);
-      res.render('dashboard', {
-        name: req.user.name,
-        email: req.user.email,
-        id: req.user.id,
-        userWines,
+      // console.log(userWines);
+      db.History.findAll({
+        where: {
+          userId: req.user.id,
+        },
+        include: [
+          {
+            model: db.Wine,
+            as: 'Wine',
+            required: true,
+          },
+        ],
+      }).then(userNotes => {
+        console.log(userNotes);
+        res.render('dashboard', {
+          name: req.user.name,
+          email: req.user.email,
+          id: req.user.id,
+          userWines,
+          userNotes,
+        });
       });
     });
   }

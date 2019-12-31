@@ -30,8 +30,20 @@ router.post('/add-wine', (req, res, next) => {
       WineId: winedata.id,
       vendor: req.body.vendor,
     }).then(inventory => {
-      res.json(inventory);
+      // res.json(inventory);
+      res.redirect('/dashboard');
     });
+  });
+});
+router.post('/add-note', (req, res, next) => {
+  db.History.create({
+    UserId: req.user.id,
+    notes: req.body.notes,
+    personal_rating: req.body.rating,
+    WineId: req.body.wine,
+  }).then(notedata => {
+    // res.json(inventory);
+    res.redirect('/dashboard');
   });
 });
 

@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   const History = sequelize.define('History', {
     id: {
       type: DataTypes.INTEGER(11),
@@ -32,5 +32,13 @@ module.exports = function (sequelize, DataTypes) {
       },
     });
   };
+  History.associate = models => {
+    History.belongsTo(models.Wine, {
+      foreignKey: {
+        allowNull: false,
+      },
+    });
+  };
+
   return History;
 };
