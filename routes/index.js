@@ -36,7 +36,7 @@ router.get('/dashboard', (req, res, next) => {
       // console.log(userWines);
       db.History.findAll({
         where: {
-          userId: req.user.id,
+          UserId: req.user.id,
         },
         include: [
           {

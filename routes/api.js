@@ -25,7 +25,7 @@ router.post('/add-wine', (req, res, next) => {
     ageability_index: req.body.ageability_index,
   }).then(winedata => {
     db.Inventory.create({
-      UserId: req.user.id,
+      userId: req.user.id,
       quantity: req.body.quantity,
       WineId: winedata.id,
       vendor: req.body.vendor,
@@ -37,7 +37,7 @@ router.post('/add-wine', (req, res, next) => {
 });
 router.post('/add-note', (req, res, next) => {
   db.History.create({
-    UserId: req.user.id,
+    userId: req.user.id,
     notes: req.body.notes,
     personal_rating: req.body.rating,
     WineId: req.body.wine,
@@ -106,24 +106,13 @@ router.post('/notes', (req, res, next) => {
   });
 });
 
+
 router.get('/all-notes', (req, res, next) => {
   db.Wine.findAll({}).then(notes => {
     res.json(notes);
   });
 });
 
-router.post('/notes', (req, res, next) => {
-  db.History.create({
-    Wine: req.body,
-    WineId: req.body.wine,
-    UserId: req.user.id, // 'UserId' = pascal case
-    personal_rating: req.body.personal_rating,
-    notes: req.body.notes,
-    purchase_date: req.body.purchase_date,
-  }).then(History => {
-    res.redirect('/dashboard');
-  });
-});
 
 module.exports = router;
 
