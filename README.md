@@ -41,4 +41,4 @@ NODE_ENV=development
 #### Draft final copy of README.md
 #### Design presentation;
 #### Site content & copy
-#### Display "Your Collection" with details
+#### Display "Your Collection" accurately with details
