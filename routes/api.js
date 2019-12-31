@@ -25,7 +25,7 @@ router.post('/add-wine', (req, res, next) => {
     ageability_index: req.body.ageability_index,
   }).then(winedata => {
     db.Inventory.create({
-      userId: req.user.id,
+      UserId: req.user.id,
       quantity: req.body.quantity,
       WineId: winedata.id,
       vendor: req.body.vendor,
@@ -37,7 +37,7 @@ router.post('/add-wine', (req, res, next) => {
 });
 router.post('/add-note', (req, res, next) => {
   db.History.create({
-    userId: req.user.id,
+    UserId: req.user.id,
     notes: req.body.notes,
     personal_rating: req.body.rating,
     WineId: req.body.wine,
@@ -103,13 +103,6 @@ router.post('/notes', (req, res, next) => {
     purchase_date: req.body.purchase_date,
   }).then(History => {
     res.redirect('/dashboard');
-  });
-});
-
-
-router.get('/all-notes', (req, res, next) => {
-  db.Wine.findAll({}).then(notes => {
-    res.json(notes);
   });
 });
 
