@@ -1,4 +1,5 @@
 var express = require('express');
+var sequelize = require('sequelize');
 
 var router = express.Router();
 
@@ -25,6 +26,12 @@ router.get('/dashboard', (req, res, next) => {
       where: {
         userId: req.user.id,
       },
+      attributes: [
+        'quantity',
+        'vendor',
+        [sequelize.fn('sum', sequelize.col('Inventory.quantity')), 'total'],
+        [sequelize.fn('sum', sequelize.col('Wine.value')), 'total_value'],
+      ],
       include: [
         {
           model: db.Wine,
@@ -32,9 +39,10 @@ router.get('/dashboard', (req, res, next) => {
           required: true,
         },
       ],
-    }).then(userWines => {
-      // console.log(userWines);
-      db.History.findAll({
+      group: ['Inventory.wineId'],
+    }).then(totals => {
+      console.log(totals);
+      db.Inventory.findAll({
         where: {
           userId: req.user.id,
         },
@@ -45,14 +53,29 @@ router.get('/dashboard', (req, res, next) => {
             required: true,
           },
         ],
-      }).then(userNotes => {
-        console.log(userNotes);
-        res.render('dashboard', {
-          name: req.user.name,
-          email: req.user.email,
-          id: req.user.id,
-          userWines,
-          userNotes,
+      }).then(userWines => {
+        // console.log(userWines);
+        db.History.findAll({
+          where: {
+            userId: req.user.id,
+          },
+          include: [
+            {
+              model: db.Wine,
+              as: 'Wine',
+              required: true,
+            },
+          ],
+        }).then(userNotes => {
+          // console.log(userNotes);
+          res.render('dashboard', {
+            name: req.user.name,
+            email: req.user.email,
+            id: req.user.id,
+            userWines,
+            userNotes,
+            totals,
+          });
         });
       });
     });
