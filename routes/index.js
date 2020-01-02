@@ -59,6 +59,7 @@ router.get('/dashboard', (req, res, next) => {
           where: {
             userId: req.user.id,
           },
+          order: [['updatedAt', 'DESC']],
           include: [
             {
               model: db.Wine,
@@ -98,6 +99,42 @@ router.get('/login', function(req, res, next) {
   }
 });
 
+router.get('/wine/:id', function(req, res, next) {
+  try {
+    db.Inventory.findAll({
+      where: {
+        wineId: req.params.id,
+      },
+      include: [
+        {
+          model: db.Wine,
+          as: 'Wine',
+          required: true,
+          include: [
+            {
+              model: db.History,
+              as: 'Histories',
+              required: false,
+              where: {
+                userId: req.user.id,
+              },
+            },
+          ],
+        },
+      ],
+    }).then(thisWine => {
+      console.log(thisWine[0].dataValues);
+      res.render('wine', {
+        title: 'Single Wine',
+        wine: thisWine[0].dataValues,
+        id: req.user.id,
+        name: req.user.name,
+      });
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
 router.get('/notes/:Wine', function(req, res, next) {
   try {
     res.render('notes', { title: 'Notes', Wine: req.params.Wine });

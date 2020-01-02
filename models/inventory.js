@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   const Inventory = sequelize.define('Inventory', {
     id: {
       type: DataTypes.INTEGER(11),

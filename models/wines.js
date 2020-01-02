@@ -45,6 +45,10 @@ module.exports = function(sequelize, DataTypes) {
       comment: 'null',
     },
   });
-
+  Wine.associate = models => {
+    Wine.hasMany(models.History, {
+      onDelete: 'cascade',
+    });
+  };
   return Wine;
 };

@@ -31,8 +31,6 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
       },
     });
-  };
-  History.associate = models => {
     History.belongsTo(models.Wine, {
       foreignKey: {
         allowNull: false,
