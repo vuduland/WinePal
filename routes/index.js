@@ -1,6 +1,6 @@
 var express = require('express');
 var sequelize = require('sequelize');
-
+var Op = require('Sequelize').Op;
 var router = express.Router();
 
 var db = require('../models');
@@ -18,7 +18,22 @@ router.get('/', function(req, res, next) {
   }
 });
 
-router.get('/dashboard', (req, res, next) => {
+router.get('/dashboard/:order?', (req, res, next) => {
+  let order = req.params.order;
+  const paramOrder = () => {
+    if (order === 'youngest-vintage') {
+      return [[db.Wine, 'vintage', 'DESC']];
+    } else if (order === 'oldest-vintage') {
+      return [[db.Wine, 'vintage', 'ASC']];
+    } else if ( order === 'oldest-updated' ) {
+      return [['updatedAt', 'ASC']];
+    } else if ( order === 'recent-updated') {
+      return [['updatedAt', 'DESC']];
+    } else {
+      return [['updatedAt', 'DESC']];
+    }
+  }
+
   if (!req.user) {
     res.redirect(302, '../login');
   } else {
@@ -41,11 +56,13 @@ router.get('/dashboard', (req, res, next) => {
       ],
       group: ['Inventory.wineId'],
     }).then(totals => {
-      console.log(totals);
+
       db.Inventory.findAll({
         where: {
           userId: req.user.id,
+          quantity: {[Op.gt]: 0}
         },
+        order: paramOrder(),
         include: [
           {
             model: db.Wine,
@@ -54,7 +71,7 @@ router.get('/dashboard', (req, res, next) => {
           },
         ],
       }).then(userWines => {
-        // console.log(userWines);
+        console.log(userWines);
         db.History.findAll({
           where: {
             userId: req.user.id,
@@ -76,6 +93,7 @@ router.get('/dashboard', (req, res, next) => {
             userWines,
             userNotes,
             totals,
+            order
           });
         });
       });
@@ -143,8 +161,8 @@ router.get('/notes/:Wine', function(req, res, next) {
   }
 });
 
-router.get('/notes/:Wine', function(req, res, next) {
-  res.render('notes', { title: 'Notes', Wine: req.params.Wine });
-});
+// router.get('/notes/:Wine', function(req, res, next) {
+//   res.render('notes', { title: 'Notes', Wine: req.params.Wine });
+// });
 
 module.exports = router;
