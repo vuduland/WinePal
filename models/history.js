@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
       comment: 'null',
     },
     notes: {
-      type: DataTypes.STRING(100),
+      type: DataTypes.TEXT(),
       allowNull: true,
       comment: 'null',
     },
@@ -31,8 +31,6 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
       },
     });
-  };
-  History.associate = models => {
     History.belongsTo(models.Wine, {
       foreignKey: {
         allowNull: false,

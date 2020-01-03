@@ -10,3 +10,10 @@ const addNote = wineId => {
   const wineIdField = addNoteModal.querySelector('.wine-id');
   wineIdField.value = wineId;
 };
+
+
+
+function changeOrder() {
+  console.log(document.querySelector('#dicks').value);
+  window.location.href = `/dashboard/${document.querySelector('#dicks').value}`;
+}

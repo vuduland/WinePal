@@ -1,6 +1,6 @@
 /* jshint indent: 2 */
 
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   const Wine = sequelize.define('Wine', {
     id: {
       type: DataTypes.INTEGER(11),
@@ -39,7 +39,16 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: true,
       comment: 'null',
     },
+    value: {
+      type: DataTypes.INTEGER(11),
+      allowNull: true,
+      comment: 'null',
+    },
   });
-
+  Wine.associate = models => {
+    Wine.hasMany(models.History, {
+      onDelete: 'cascade',
+    });
+  };
   return Wine;
 };

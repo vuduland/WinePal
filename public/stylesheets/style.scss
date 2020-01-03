@@ -5,6 +5,7 @@ $mid: #b48a4b;
 $light: #d8dab8;
 $dark: rgb(43, 34, 34);
 $medium-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.178);
+$shadow-inset: inset 0px 0px 50px -5px #00000094;
 
 * {
     font-family: "Nunito Sans", sans-serif;
@@ -49,15 +50,15 @@ header {
         text-transform: uppercase;
         margin-left: 10px;
         svg {
-            height: 45px;
+            height: 40px;
             display: block;
-            fill: $light;
+            fill: $mid;
         }
     }
     .menu-button {
         padding: 10px 20px;
         svg {
-            fill: $light;
+            fill: $mid;
             height: 30px;
             width: 30px;
             display: block;
@@ -264,11 +265,15 @@ main {
         .recent-notes {
             padding: 20px 30px;
             padding-top: 20px;
+            background-color: #00000015;
+            box-shadow: inset 0px 0px 50px -5px #00000094;
 
             .note {
-                border: 1px solid $mid;
+                border-left: 1px solid $mid;
+                box-shadow: $medium-shadow;
+                background-color: $main;
                 padding: 10px 20px;
-                margin-bottom: 15px;
+                margin-bottom: 25px;
                 display: flex;
                 flex-direction: column;
 
@@ -320,6 +325,8 @@ main {
         position: relative;
         display: flex;
         flex-direction: column;
+        background-color: #00000010;
+        box-shadow: inset 0px 0px 50px -5px #00000070;
 
         .listing {
             background: $light;
@@ -354,12 +361,17 @@ main {
                 background: $mid;
                 width: 60px;
                 height: 60px;
-                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.158);
+                // border: 1px solid $main;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.301);
+
                 p {
                     font-size: 20px;
                     font-weight: 700;
                     color: $light;
                     padding: 10px;
+
+                    position: relative;
+                    z-index: 3;
                 }
                 span {
                     font-size: 7px;
@@ -399,11 +411,13 @@ main {
                 }
             }
             .actions {
-                margin: 0px;
+                margin: 10px 3px;
+                padding: 5px 0px;
                 margin-left: auto;
                 display: flex;
                 flex-direction: column;
                 height: 100%;
+                max-height: 120px;
                 justify-content: space-between;
                 // background: $mid;
                 button {
@@ -416,6 +430,7 @@ main {
                     height: 30px;
                     width: 30px;
                     margin: 3px 10px;
+                    flex-shrink: 0;
                     &:hover {
                         background: $mid;
                     }
@@ -519,6 +534,86 @@ main {
             height: 300px;
             border-radius: 5px;
             resize: none;
+        }
+    }
+}
+
+// Single Wine Page
+.single-wine {
+    padding-top: 50px;
+    .inventory {
+        padding: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $mid;
+        font-size: 12px;
+        vertical-align: middle;
+
+        .quantity {
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+    .single-wine-details {
+        max-width: 600px;
+        margin: 0px auto;
+        padding: 20px;
+        text-align: center;
+        border-top: 1px solid $mid;
+        border-bottom: 1px solid $mid;
+
+        .vintage {
+            font-size: 20px;
+            color: $mid;
+            letter-spacing: 3px;
+        }
+        .producer {
+            font-size: 45px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 7px;
+        }
+        .varietal {
+            letter-spacing: 1px;
+            font-weight: 400;
+            color: $mid;
+        }
+        .vendor {
+        }
+    }
+    .single-wine-top {
+        padding-bottom: 20px;
+    }
+    .single-wine-bottom {
+        margin-top: 20px;
+        background-color: #00000020;
+        padding: 20px 0;
+        box-shadow: $shadow-inset;
+    }
+    .notes {
+        max-width: 600px;
+        margin: 20px auto;
+        h2 {
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: $mid;
+        }
+
+        .note {
+            padding: 20px 30px;
+            box-shadow: $medium-shadow;
+            border-left: 1px solid $mid;
+            margin-bottom: 25px;
+            background-color: $main;
+            .date {
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: $mid;
+                font-size: 12px;
+                font-weight: 700;
+            }
         }
     }
 }

@@ -42,13 +42,13 @@ header {
     text-transform: uppercase;
     margin-left: 10px; }
     header .logo svg {
-      height: 45px;
+      height: 40px;
       display: block;
-      fill: #d8dab8; }
+      fill: #b48a4b; }
   header .menu-button {
     padding: 10px 20px; }
     header .menu-button svg {
-      fill: #d8dab8;
+      fill: #b48a4b;
       height: 30px;
       width: 30px;
       display: block; }
@@ -219,11 +219,15 @@ main {
       padding: 20px 30px; }
     .dash-top .dash-main .recent-notes {
       padding: 20px 30px;
-      padding-top: 20px; }
+      padding-top: 20px;
+      background-color: #00000015;
+      box-shadow: inset 0px 0px 50px -5px #00000094; }
       .dash-top .dash-main .recent-notes .note {
-        border: 1px solid #b48a4b;
+        border-left: 1px solid #b48a4b;
+        box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.178);
+        background-color: #6d1a1a;
         padding: 10px 20px;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
         display: flex;
         flex-direction: column; }
         .dash-top .dash-main .recent-notes .note .note-date {
@@ -263,7 +267,9 @@ main {
     min-height: 100vh;
     position: relative;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    background-color: #00000010;
+    box-shadow: inset 0px 0px 50px -5px #00000070; }
     .dash-top .dash-list .listing {
       background: #d8dab8;
       box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.178);
@@ -294,12 +300,14 @@ main {
         background: #b48a4b;
         width: 60px;
         height: 60px;
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.158); }
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.301); }
         .dash-top .dash-list .listing .quantity p {
           font-size: 20px;
           font-weight: 700;
           color: #d8dab8;
-          padding: 10px; }
+          padding: 10px;
+          position: relative;
+          z-index: 3; }
         .dash-top .dash-list .listing .quantity span {
           font-size: 7px;
           color: #6d1a1a;
@@ -331,11 +339,13 @@ main {
           font-size: 12px;
           margin-right: 5px; }
       .dash-top .dash-list .listing .actions {
-        margin: 0px;
+        margin: 10px 3px;
+        padding: 5px 0px;
         margin-left: auto;
         display: flex;
         flex-direction: column;
         height: 100%;
+        max-height: 120px;
         justify-content: space-between; }
         .dash-top .dash-list .listing .actions button {
           background-color: transparent;
@@ -346,7 +356,8 @@ main {
           border-radius: 1000px;
           height: 30px;
           width: 30px;
-          margin: 3px 10px; }
+          margin: 3px 10px;
+          flex-shrink: 0; }
           .dash-top .dash-list .listing .actions button:hover {
             background: #b48a4b; }
           .dash-top .dash-list .listing .actions button svg {
@@ -427,5 +438,66 @@ main {
     height: 300px;
     border-radius: 5px;
     resize: none; }
+
+.single-wine {
+  padding-top: 50px; }
+  .single-wine .inventory {
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #b48a4b;
+    font-size: 12px;
+    vertical-align: middle; }
+    .single-wine .inventory .quantity {
+      font-size: 20px;
+      font-weight: 700; }
+  .single-wine .single-wine-details {
+    max-width: 600px;
+    margin: 0px auto;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #b48a4b;
+    border-bottom: 1px solid #b48a4b; }
+    .single-wine .single-wine-details .vintage {
+      font-size: 20px;
+      color: #b48a4b;
+      letter-spacing: 3px; }
+    .single-wine .single-wine-details .producer {
+      font-size: 45px;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 7px; }
+    .single-wine .single-wine-details .varietal {
+      letter-spacing: 1px;
+      font-weight: 400;
+      color: #b48a4b; }
+  .single-wine .single-wine-top {
+    padding-bottom: 20px; }
+  .single-wine .single-wine-bottom {
+    margin-top: 20px;
+    background-color: #00000020;
+    padding: 20px 0;
+    box-shadow: inset 0px 0px 50px -5px #00000094; }
+  .single-wine .notes {
+    max-width: 600px;
+    margin: 20px auto; }
+    .single-wine .notes h2 {
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: #b48a4b; }
+    .single-wine .notes .note {
+      padding: 20px 30px;
+      box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.178);
+      border-left: 1px solid #b48a4b;
+      margin-bottom: 25px;
+      background-color: #6d1a1a; }
+      .single-wine .notes .note .date {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #b48a4b;
+        font-size: 12px;
+        font-weight: 700; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  main.single-wine
+    .single-wine-top
+      .single-wine-details
+        h2.vintage= wine.Wine.vintage
+        h1.producer= wine.Wine.producer
+        h2.varietal= wine.Wine.varietal
+      .inventory
+        p You have 
+          span.quantity #{wine.quantity} 
+          | Bottles
+        p.vendor Purchased from #{wine.vendor}
+
+    .single-wine-bottom
+      .notes
+        h2 Notes
+        each note in wine.Wine.Histories
+          .note
+            p.date= moment(note.createdAt).fromNow() 
+            p.text= note.notes

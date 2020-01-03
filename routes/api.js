@@ -23,6 +23,7 @@ router.post('/add-wine', (req, res, next) => {
     varietal: req.body.varietal,
     producer: req.body.producer,
     ageability_index: req.body.ageability_index,
+    value: req.body.value,
   }).then(winedata => {
     db.Inventory.create({
       UserId: req.user.id,
