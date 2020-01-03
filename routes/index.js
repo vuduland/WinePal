@@ -59,8 +59,9 @@ router.get('/dashboard/:order?', (req, res, next) => {
 
       db.Inventory.findAll({
         where: {
-          userId: req.user.id,
-          quantity: {[Op.gt]: 0}
+          UserId: req.user.id,
+          //userId: req.user.id,
+          //quantity: {[Op.gt]: 0}
         },
         order: paramOrder(),
         include: [

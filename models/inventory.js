@@ -22,11 +22,11 @@ module.exports = function(sequelize, DataTypes) {
   });
   Inventory.associate = models => {
     Inventory.belongsTo(models.User, {
-      // foreignKey: 'userId',
+      foreignKey: 'UserId',
       allowNull: false,
     });
     Inventory.belongsTo(models.Wine, {
-      // foreignKey: 'wineId',
+      foreignKey: 'WineId',
       allowNull: true,
     });
   };
