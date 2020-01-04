@@ -364,6 +364,10 @@ main {
             height: 20px;
             width: 20px;
             fill: #d8dab8; }
+        .dash-top .dash-list .listing .actions .add-minus {
+          display: flex; }
+        .dash-top .dash-list .listing .actions * {
+          margin-left: auto; }
     .dash-top .dash-list .add-wine-button {
       margin-top: auto;
       position: fixed;

@@ -18,7 +18,8 @@ function changeOrder() {
   window.location.href = `/dashboard/${document.querySelector('#dicks').value}`;
 }
 
-function incrementQty(wine, qty) {
+function incrementQty(wine) {
+  const incrementButton = document.querySelector(`button[data-wine="${wine}"]`);
   var headers = {
     "Content-Type": "application/json",
     "Access-Control-Origin": "*"
@@ -36,11 +37,19 @@ function incrementQty(wine, qty) {
       return response.json();
   })
   .then(function(data){
-      console.log(data)
+      // console.log(data);
+      if (data) {
+        const thisQty = document.querySelector(`.quantity[data-wine="${wine}"]`);
+        const qtyVal = thisQty.querySelector('p');
+        qtyVal.textContent = parseInt(qtyVal.textContent) + 1;
+      }
   });
 }
+//qtyVal.value = parseInt(qty.value) + 1; ===         qtyVal.value = +qty.value + 1;
 
-function decrementQty(wine, qty) {
+
+
+function decrementQty(wine) {
   var headers = {
     "Content-Type": "application/json",
     "Access-Control-Origin": "*"
@@ -48,16 +57,26 @@ function decrementQty(wine, qty) {
   var data = {
     wine,
     qty
-}
-fetch("/api/decrement-qty", {
-    method: "POST",
-    headers: headers,
-    body:  JSON.stringify(data)
-})
-.then(function(response){
-    return response.json();
-})
-.then(function(data){
-    console.log(data)
-});
+  }
+  console.log(qty);
+  console.log(this.qty);
+  if (+qty > 0) {
+    fetch("/api/decrement-qty", {
+        method: "POST",
+        headers: headers,
+        body:  JSON.stringify(data)
+    })
+    .then(function(response){
+          return response.json();
+      })
+      .then(function(data){
+          // console.log(data);
+          if (data) {
+            const thisQty = document.querySelector(`.quantity[data-wine="${wine}"]`);
+            const qtyVal = thisQty.querySelector('p');
+            qtyVal.textContent = parseInt(qtyVal.textContent) - 1;
+          }
+      });
+
+  }
 }

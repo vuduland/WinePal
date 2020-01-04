@@ -1,3 +1,4 @@
+-- comment
 CREATE DATABASE IF NOT EXISTS wine_db;
 USE wine_db;
 
