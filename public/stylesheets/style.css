@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
 * {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   box-sizing: border-box; }
 
 body {
@@ -12,7 +12,7 @@ body {
   overflow-x: hidden; }
 
 button.primary {
-  margin: 20px 0px;
+  margin: 20px 0px 0px 20px;
   background-color: #6d1a1a;
   border: none;
   border-radius: 10px;

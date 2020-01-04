@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap');
 
 $main: #6d1a1a;
 $mid: #b48a4b;
@@ -8,619 +8,619 @@ $medium-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.178);
 $shadow-inset: inset 0px 0px 50px -5px #00000094;
 
 * {
-    font-family: "Nunito Sans", sans-serif;
-    box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+  box-sizing: border-box;
 }
 body {
-    margin: 0;
-    background: $main;
-    color: $light;
-    box-shadow: inset 0px 0px 100px 0px rgba(0, 0, 0, 0.705);
-    min-height: 100vh;
-    overflow-x: hidden;
+  margin: 0;
+  background: $main;
+  color: $light;
+  box-shadow: inset 0px 0px 100px 0px rgba(0, 0, 0, 0.705);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 button.primary {
-    margin: 20px 0px;
-    background-color: $main;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 30px;
-    float: right;
-    color: $light;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  margin: 20px 0px 0px 20px;
+  background-color: $main;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 30px;
+  float: right;
+  color: $light;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    padding: 0px 20px;
-    border-bottom: 1px solid $mid;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: $main;
-    z-index: 100;
-    height: 70px;
-    box-shadow: inset 0px 0px 25px -5px rgba(0, 0, 0, 0.479);
-    .logo {
-        font-size: 30px;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-left: 10px;
-        svg {
-            height: 40px;
-            display: block;
-            fill: $mid;
-        }
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 0px 20px;
+  border-bottom: 1px solid $mid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $main;
+  z-index: 100;
+  height: 70px;
+  box-shadow: inset 0px 0px 25px -5px rgba(0, 0, 0, 0.479);
+  .logo {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 10px;
+    svg {
+      height: 40px;
+      display: block;
+      fill: $mid;
     }
-    .menu-button {
-        padding: 10px 20px;
-        svg {
-            fill: $mid;
-            height: 30px;
-            width: 30px;
-            display: block;
-        }
+  }
+  .menu-button {
+    padding: 10px 20px;
+    svg {
+      fill: $mid;
+      height: 30px;
+      width: 30px;
+      display: block;
     }
+  }
 }
 .side-menu {
-    position: fixed;
-    display: flex;
-    background: #00000060;
-    width: 100%;
-    right: 0;
-    top: 0;
-    z-index: 200;
-    transition: all 0.3s, opacity 0.5s;
-    &.closed {
-        opacity: 0;
-        pointer-events: none;
-        .side-menu-inner {
-            transform: translateX(120%);
-        }
-    }
+  position: fixed;
+  display: flex;
+  background: #00000060;
+  width: 100%;
+  right: 0;
+  top: 0;
+  z-index: 200;
+  transition: all 0.3s, opacity 0.5s;
+  &.closed {
+    opacity: 0;
+    pointer-events: none;
     .side-menu-inner {
-        transition: all 0.3s;
-        width: 33%;
-        margin-left: auto;
-        max-width: 400px;
-        height: 100vh;
-        background: $dark;
-        box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.356),
-            inset 0px 0px 100px -5px rgba(0, 0, 0, 0.651);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .close-menu {
-            background: transparent;
-            border: none;
-            margin: 20px;
-            margin-right: 30px;
-            margin-left: auto;
-            svg {
-                height: 30px;
-                width: 30px;
-                fill: $mid;
-            }
-        }
-        .profile-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .name {
-            color: $mid;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 16px;
-        }
-        .sign-out {
-            background-color: transparent;
-            border: 1px solid $mid;
-            color: $light;
-            padding: 5px 20px;
-            letter-spacing: 1px;
-            text-decoration: none;
-            &:hover {
-                background-color: $mid;
-                color: $dark;
-            }
-        }
+      transform: translateX(120%);
     }
-}
-main {
-    margin-top: 70px;
-}
-.hero-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  }
+  .side-menu-inner {
+    transition: all 0.3s;
+    width: 33%;
+    margin-left: auto;
+    max-width: 400px;
     height: 100vh;
-    background-image: url("/images/boxes-of-wines.jpg");
-    filter: sepia(1) blur(3px) opacity(0.15);
-    z-index: -1;
-}
-.intro {
-    text-align: center;
-    min-height: 100vh;
+    background: $dark;
+    box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.356),
+      inset 0px 0px 100px -5px rgba(0, 0, 0, 0.651);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    max-width: 900px;
-    margin: 60px auto;
-    h1 {
-        font-size: 70px;
+    .close-menu {
+      background: transparent;
+      border: none;
+      margin: 20px;
+      margin-right: 30px;
+      margin-left: auto;
+      svg {
+        height: 30px;
+        width: 30px;
+        fill: $mid;
+      }
     }
+    .profile-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .name {
+      color: $mid;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 16px;
+    }
+    .sign-out {
+      background-color: transparent;
+      border: 1px solid $mid;
+      color: $light;
+      padding: 5px 20px;
+      letter-spacing: 1px;
+      text-decoration: none;
+      &:hover {
+        background-color: $mid;
+        color: $dark;
+      }
+    }
+  }
+}
+main {
+  margin-top: 70px;
+}
+.hero-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('/images/boxes-of-wines.jpg');
+  filter: sepia(1) blur(3px) opacity(0.15);
+  z-index: -1;
+}
+.intro {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  margin: 60px auto;
+  h1 {
+    font-size: 70px;
+  }
 }
 
 .cta {
-    text-align: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  div {
+    height: 100%;
     display: flex;
-    align-items: center;
-    div {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        padding: 20px;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
 
-        margin-top: auto;
-    }
+    margin-top: auto;
+  }
 
-    button {
-        background-color: transparent;
-        font-size: 20px;
-        border-radius: 1000px;
-        border: 2px solid $light;
-        padding: 5px 50px;
-        color: $light;
-    }
-    .signup-btn {
-        background-color: $light;
-        color: $main;
-        // font-size: 30px;
+  button {
+    background-color: transparent;
+    font-size: 20px;
+    border-radius: 1000px;
+    border: 2px solid $light;
+    padding: 5px 50px;
+    color: $light;
+  }
+  .signup-btn {
+    background-color: $light;
+    color: $main;
+    // font-size: 30px;
 
-        margin-top: auto;
-    }
+    margin-top: auto;
+  }
 }
 
 .add-wine {
+  display: block;
+  position: fixed;
+  top: 70px;
+  left: 0px;
+  height: calc(100vh - 70px);
+  width: 100%;
+  background-color: $mid;
+  padding: 40px;
+  overflow-y: auto;
+  transition: all 0.3s;
+  &.hidden {
+    // display: none;
+    opacity: 0;
+    transform: translateX(120%);
+  }
+  .add-wine-inner {
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  label,
+  input {
     display: block;
-    position: fixed;
-    top: 70px;
-    left: 0px;
-    height: calc(100vh - 70px);
     width: 100%;
-    background-color: $mid;
-    padding: 40px;
-    overflow-y: auto;
-    transition: all 0.3s;
-    &.hidden {
-        // display: none;
-        opacity: 0;
-        transform: translateX(120%);
+    padding: 5px;
+  }
+  input {
+    background: transparentize($light, $amount: 0.7);
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    border-bottom: 1px solid $main;
+  }
+  label {
+    color: $main;
+    font-weight: 700;
+    margin-top: 20px;
+  }
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    color: $main;
+  }
+  .two-col {
+    display: flex;
+    justify-content: space-between;
+    & > div {
+      flex-basis: calc(50% - 20px);
     }
-    .add-wine-inner {
-        max-width: 600px;
-        margin: 20px auto;
-    }
-    label,
-    input {
-        display: block;
-        width: 100%;
-        padding: 5px;
-    }
-    input {
-        background: transparentize($light, $amount: 0.7);
-        appearance: none;
-        -webkit-appearance: none;
-        border: none;
-        border-bottom: 1px solid $main;
-    }
-    label {
-        color: $main;
-        font-weight: 700;
-        margin-top: 20px;
-    }
-    h2 {
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-top: 10px;
-        margin-bottom: 50px;
-        color: $main;
-    }
-    .two-col {
-        display: flex;
-        justify-content: space-between;
-        & > div {
-            flex-basis: calc(50% - 20px);
-        }
-    }
+  }
 }
 
 .dash-top {
-    display: flex;
-    border-bottom: 1px solid $mid;
-    h2 {
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-top: 10px;
-        margin-bottom: 50px;
-        color: $mid;
+  display: flex;
+  border-bottom: 1px solid $mid;
+  h2 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    color: $mid;
+  }
+
+  .dash-main {
+    flex-basis: 50%;
+    min-height: 50vh;
+    border-right: 1px solid $mid;
+    .overview {
+      padding-bottom: 30px;
+      border-bottom: 1px solid $mid;
+      padding: 20px 30px;
     }
+    .recent-notes {
+      padding: 20px 30px;
+      padding-top: 20px;
+      background-color: #00000015;
+      box-shadow: inset 0px 0px 50px -5px #00000094;
 
-    .dash-main {
-        flex-basis: 50%;
-        min-height: 50vh;
-        border-right: 1px solid $mid;
-        .overview {
-            padding-bottom: 30px;
-            border-bottom: 1px solid $mid;
-            padding: 20px 30px;
-        }
-        .recent-notes {
-            padding: 20px 30px;
-            padding-top: 20px;
-            background-color: #00000015;
-            box-shadow: inset 0px 0px 50px -5px #00000094;
-
-            .note {
-                border-left: 1px solid $mid;
-                box-shadow: $medium-shadow;
-                background-color: $main;
-                padding: 10px 20px;
-                margin-bottom: 25px;
-                display: flex;
-                flex-direction: column;
-
-                .note-date {
-                    color: $mid;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: 2px;
-                    font-size: 12px;
-                }
-                .note-wine {
-                    color: $mid;
-                    font-weight: 700;
-                    text-transform: uppercase;
-                    letter-spacing: 2px;
-                    font-size: 12px;
-                    margin-left: auto;
-                    span {
-                        margin: 0px 3px;
-                    }
-                }
-            }
-        }
-        .metrics {
-            max-width: 500px;
-            margin: 50px auto;
-            .row {
-                display: flex;
-                justify-content: space-between;
-                padding: 10px;
-                margin-bottom: 10px;
-                border-bottom: 1px solid $mid;
-
-                .label {
-                    color: $mid;
-                    font-size: 16px;
-                    text-transform: uppercase;
-                    font-weight: 700;
-                    letter-spacing: 2px;
-                }
-            }
-        }
-    }
-    .dash-list {
-        flex-basis: 50%;
-        padding: 20px 30px;
-        padding-left: 60px;
-        min-height: 100vh;
-        position: relative;
+      .note {
+        border-left: 1px solid $mid;
+        box-shadow: $medium-shadow;
+        background-color: $main;
+        padding: 10px 20px;
+        margin-bottom: 25px;
         display: flex;
         flex-direction: column;
-        background-color: #00000010;
-        box-shadow: inset 0px 0px 50px -5px #00000070;
 
-        .listing {
-            background: $light;
-            box-shadow: $medium-shadow;
-            border-radius: 6px;
-            // padding: 20px;
-            color: $main;
-            display: flex;
-            align-items: center;
-            position: relative;
-            padding-left: 40px;
-            margin-bottom: 15px;
-            p,
-            h3,
-            h4 {
-                margin: 0;
-            }
-            & > div {
-                margin: 20px 10px;
-            }
-            .quantity {
-                display: block;
-                position: absolute;
-                left: 0;
-                margin: 0;
-                transform: translateX(-50%);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                border-radius: 1000px;
-                background: $mid;
-                width: 60px;
-                height: 60px;
-                // border: 1px solid $main;
-                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.301);
-
-                p {
-                    font-size: 20px;
-                    font-weight: 700;
-                    color: $light;
-                    padding: 10px;
-
-                    position: relative;
-                    z-index: 3;
-                }
-                span {
-                    font-size: 7px;
-                    color: $main;
-                    display: block;
-                    position: absolute;
-                    font-weight: 700;
-                    right: -25px;
-                    text-transform: uppercase;
-                    transform: rotate(-90deg);
-                }
-            }
-            .title {
-                padding: 10px;
-                flex-basis: 30%;
-                flex-shrink: 0;
-                h3 {
-                    text-transform: uppercase;
-                    letter-spacing: 2px;
-                    font-weight: 700;
-                }
-                h4 {
-                    font-weight: 400;
-                }
-            }
-            .details {
-                border-left: 1px solid $main;
-                margin-left: 10px;
-                padding: 10px 20px;
-                font-size: 14px;
-                line-height: 1.7;
-                strong {
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    font-size: 12px;
-                    margin-right: 5px;
-                }
-            }
-            .actions {
-                margin: 10px 3px;
-                padding: 5px 0px;
-                margin-left: auto;
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-                max-height: 120px;
-                justify-content: space-between;
-                // background: $mid;
-
-                button {
-                    background-color: transparent;
-                    border: none;
-                    display: flex;
-                    align-items: center;
-                    background: $main;
-                    border-radius: 1000px;
-                    height: 30px;
-                    width: 30px;
-                    margin: 3px 10px;
-                    flex-shrink: 0;
-                    &:hover {
-                        background: $mid;
-                    }
-                    svg {
-                        height: 20px;
-                        width: 20px;
-                        fill: $light;
-                    }
-                }
-                .add-minus {
-                    display: flex;
-                }
-                *{
-                    margin-left: auto !important;
-                }
-            }
+        .note-date {
+          color: $mid;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 12px;
         }
-        .add-wine-button {
-            margin-top: auto;
-            // width: calc(50% - 40px);
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: $mid;
-            border: none;
-            box-shadow: $medium-shadow;
-            padding: 5px 30px;
-
-            border-radius: 10px;
-
-            p {
-                color: $main;
-                font-weight: 700;
-                text-transform: uppercase;
-            }
-            svg {
-                margin-right: 10px;
-                path {
-                    fill: $main;
-                }
-            }
+        .note-wine {
+          color: $mid;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 12px;
+          margin-left: auto;
+          span {
+            margin: 0px 3px;
+          }
         }
+      }
     }
+    .metrics {
+      max-width: 500px;
+      margin: 50px auto;
+      .row {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid $mid;
+
+        .label {
+          color: $mid;
+          font-size: 16px;
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+  .dash-list {
+    flex-basis: 50%;
+    padding: 20px 30px;
+    padding-left: 60px;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #00000010;
+    box-shadow: inset 0px 0px 50px -5px #00000070;
+
+    .listing {
+      background: $light;
+      box-shadow: $medium-shadow;
+      border-radius: 6px;
+      // padding: 20px;
+      color: $main;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding-left: 40px;
+      margin-bottom: 15px;
+      p,
+      h3,
+      h4 {
+        margin: 0;
+      }
+      & > div {
+        margin: 20px 10px;
+      }
+      .quantity {
+        display: block;
+        position: absolute;
+        left: 0;
+        margin: 0;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 1000px;
+        background: $mid;
+        width: 60px;
+        height: 60px;
+        // border: 1px solid $main;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.301);
+
+        p {
+          font-size: 20px;
+          font-weight: 700;
+          color: $light;
+          padding: 10px;
+
+          position: relative;
+          z-index: 3;
+        }
+        span {
+          font-size: 7px;
+          color: $main;
+          display: block;
+          position: absolute;
+          font-weight: 700;
+          right: -25px;
+          text-transform: uppercase;
+          transform: rotate(-90deg);
+        }
+      }
+      .title {
+        padding: 10px;
+        flex-basis: 30%;
+        flex-shrink: 0;
+        h3 {
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-weight: 700;
+        }
+        h4 {
+          font-weight: 400;
+        }
+      }
+      .details {
+        border-left: 1px solid $main;
+        margin-left: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
+        line-height: 1.7;
+        strong {
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-size: 12px;
+          margin-right: 5px;
+        }
+      }
+      .actions {
+        margin: 10px 3px;
+        padding: 5px 0px;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        max-height: 120px;
+        justify-content: space-between;
+        // background: $mid;
+
+        button {
+          background-color: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          background: $main;
+          border-radius: 1000px;
+          height: 30px;
+          width: 30px;
+          margin: 3px 10px;
+          flex-shrink: 0;
+          &:hover {
+            background: $mid;
+          }
+          svg {
+            height: 20px;
+            width: 20px;
+            fill: $light;
+          }
+        }
+        .add-minus {
+          display: flex;
+        }
+        * {
+          margin-left: auto !important;
+        }
+      }
+    }
+    .add-wine-button {
+      margin-top: auto;
+      // width: calc(50% - 40px);
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $mid;
+      border: none;
+      box-shadow: $medium-shadow;
+      padding: 5px 30px;
+
+      border-radius: 10px;
+
+      p {
+        color: $main;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      svg {
+        margin-right: 10px;
+        path {
+          fill: $main;
+        }
+      }
+    }
+  }
 }
 .add-note {
-    position: absolute;
-    top: 70px;
-    left: 0;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #00000090;
+  &.hidden {
+    display: none;
+  }
+  .add-note-inner {
+    background-color: $mid;
+    padding: 30px;
+    margin-top: -70px;
     width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #00000090;
-    &.hidden {
-        display: none;
+    max-width: 600px;
+    border-radius: 10px;
+    h2 {
+      color: $main;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
-    .add-note-inner {
-        background-color: $mid;
-        padding: 30px;
-        margin-top: -70px;
-        width: 100%;
-        max-width: 600px;
-        border-radius: 10px;
-        h2 {
-            color: $main;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+  }
+  form {
+    width: 100%;
+  }
+  .input-block {
+    label,
+    input {
+      display: block;
+      color: $main;
+      width: 100%;
     }
-    form {
-        width: 100%;
+    input {
+      background-color: $light;
+      // border: 2px solid $main;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: $medium-shadow;
+      border: none;
     }
-    .input-block {
-        label,
-        input {
-            display: block;
-            color: $main;
-            width: 100%;
-        }
-        input {
-            background-color: $light;
-            // border: 2px solid $main;
-            border-radius: 5px;
-            padding: 10px;
-            box-shadow: $medium-shadow;
-            border: none;
-        }
-        label {
-            margin: 10px 0px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
-        textarea {
-            background-color: $light;
-            color: $main;
-            padding: 10px;
-            box-shadow: $medium-shadow;
-            // border: 2px solid $main;
-            border: none;
-            width: 100%;
-            height: 300px;
-            border-radius: 5px;
-            resize: none;
-        }
+    label {
+      margin: 10px 0px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
     }
+    textarea {
+      background-color: $light;
+      color: $main;
+      padding: 10px;
+      box-shadow: $medium-shadow;
+      // border: 2px solid $main;
+      border: none;
+      width: 100%;
+      height: 300px;
+      border-radius: 5px;
+      resize: none;
+    }
+  }
 }
 
 // Single Wine Page
 .single-wine {
-    padding-top: 50px;
-    .inventory {
-        padding: 20px;
-        text-align: center;
+  padding-top: 50px;
+  .inventory {
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $mid;
+    font-size: 12px;
+    vertical-align: middle;
+
+    .quantity {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+  .single-wine-details {
+    max-width: 600px;
+    margin: 0px auto;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid $mid;
+    border-bottom: 1px solid $mid;
+
+    .vintage {
+      font-size: 20px;
+      color: $mid;
+      letter-spacing: 3px;
+    }
+    .producer {
+      font-size: 45px;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 7px;
+    }
+    .varietal {
+      letter-spacing: 1px;
+      font-weight: 400;
+      color: $mid;
+    }
+    .vendor {
+    }
+  }
+  .single-wine-top {
+    padding-bottom: 20px;
+  }
+  .single-wine-bottom {
+    margin-top: 20px;
+    background-color: #00000020;
+    padding: 20px 0;
+    box-shadow: $shadow-inset;
+  }
+  .notes {
+    max-width: 600px;
+    margin: 20px auto;
+    h2 {
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: $mid;
+    }
+
+    .note {
+      padding: 20px 30px;
+      box-shadow: $medium-shadow;
+      border-left: 1px solid $mid;
+      margin-bottom: 25px;
+      background-color: $main;
+      .date {
         text-transform: uppercase;
         letter-spacing: 2px;
         color: $mid;
         font-size: 12px;
-        vertical-align: middle;
-
-        .quantity {
-            font-size: 20px;
-            font-weight: 700;
-        }
+        font-weight: 700;
+      }
     }
-    .single-wine-details {
-        max-width: 600px;
-        margin: 0px auto;
-        padding: 20px;
-        text-align: center;
-        border-top: 1px solid $mid;
-        border-bottom: 1px solid $mid;
-
-        .vintage {
-            font-size: 20px;
-            color: $mid;
-            letter-spacing: 3px;
-        }
-        .producer {
-            font-size: 45px;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 7px;
-        }
-        .varietal {
-            letter-spacing: 1px;
-            font-weight: 400;
-            color: $mid;
-        }
-        .vendor {
-        }
-    }
-    .single-wine-top {
-        padding-bottom: 20px;
-    }
-    .single-wine-bottom {
-        margin-top: 20px;
-        background-color: #00000020;
-        padding: 20px 0;
-        box-shadow: $shadow-inset;
-    }
-    .notes {
-        max-width: 600px;
-        margin: 20px auto;
-        h2 {
-            font-size: 20px;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            color: $mid;
-        }
-
-        .note {
-            padding: 20px 30px;
-            box-shadow: $medium-shadow;
-            border-left: 1px solid $mid;
-            margin-bottom: 25px;
-            background-color: $main;
-            .date {
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                color: $mid;
-                font-size: 12px;
-                font-weight: 700;
-            }
-        }
-    }
+  }
 }
