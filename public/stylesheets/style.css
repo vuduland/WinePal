@@ -394,14 +394,14 @@ main {
             fill: #d8dab8; }
         .dash-top .dash-list .listing .actions .add-minus {
           display: flex;
-          background-color: #b48a4b;
           border-radius: 1000px;
           margin: 6px 10px;
           padding: 3px;
-          min-width: 75px; }
+          min-width: 75px;
+          background: #906e3c; }
           .dash-top .dash-list .listing .actions .add-minus button {
-            margin: 0px 0px;
-            background: #906e3c; }
+            background-color: #b48a4b;
+            margin: 0px 0px; }
             .dash-top .dash-list .listing .actions .add-minus button:first-child {
               margin: 0px 0px;
               margin-right: auto; }
