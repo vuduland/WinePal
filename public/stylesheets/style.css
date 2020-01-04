@@ -4,11 +4,6 @@
   font-family: 'Marcellus', serif;
   box-sizing: border-box; }
 
-html {
-  width: 100%;
-  min-width: 100vh;
-  min-height: 100vh; }
-
 body {
   font-family: 'Marcellus', serif;
   margin: 0;
@@ -19,7 +14,7 @@ body {
   overflow-x: hidden; }
 
 button.primary {
-  margin: 20px 0px 0px 20px;
+  margin: 20px 0px;
   background-color: #6d1a1a;
   border: none;
   border-radius: 10px;
@@ -97,47 +92,15 @@ header {
         height: 30px;
         width: 30px;
         fill: #b48a4b; }
-    .side-menu .side-menu-inner .side-menu-inner {
-      transition: all 0.3s;
-      width: 300px;
-      margin-left: auto;
-      margin: 3px 3px;
-      max-width: 400px;
-      height: 100vh;
-      background: #2b2222;
-      box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.356), inset 0px 0px 100px -5px rgba(0, 0, 0, 0.651);
+    .side-menu .side-menu-inner .profile-info {
       display: flex;
       flex-direction: column;
       align-items: center; }
-      .side-menu .side-menu-inner .side-menu-inner .close-menu {
-        background: transparent;
-        border: none;
-        margin: 20px;
-        margin-right: 30px;
-        margin-left: auto; }
-        .side-menu .side-menu-inner .side-menu-inner .close-menu svg {
-          height: 30px;
-          width: 30px;
-          fill: #b48a4b; }
-      .side-menu .side-menu-inner .side-menu-inner .profile-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center; }
-      .side-menu .side-menu-inner .side-menu-inner .name {
-        color: #b48a4b;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 16px; }
-      .side-menu .side-menu-inner .side-menu-inner .sign-out {
-        background-color: transparent;
-        border: 1px solid #b48a4b;
-        color: #d8dab8;
-        padding: 5px 20px;
-        letter-spacing: 1px;
-        text-decoration: none; }
-        .side-menu .side-menu-inner .side-menu-inner .sign-out:hover {
-          background-color: #b48a4b;
-          color: #2b2222; }
+    .side-menu .side-menu-inner .name {
+      color: #b48a4b;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 16px; }
     .side-menu .side-menu-inner .sign-out {
       background-color: transparent;
       border: 1px solid #b48a4b;
@@ -173,9 +136,6 @@ main {
   margin: 60px auto; }
   .intro h1 {
     font-size: 70px; }
-  @media (max-width: 600px) {
-    .intro h1 {
-      font-size: 30px; } }
 
 .cta {
   text-align: center;
@@ -198,14 +158,7 @@ main {
   .cta .signup-btn {
     background-color: #d8dab8;
     color: #6d1a1a;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: auto;
-    padding: 10px 18px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    background-color: #b48a4b; }
+    margin-top: auto; }
 
 .add-wine {
   display: block;
@@ -254,9 +207,6 @@ main {
 .dash-top {
   display: flex;
   border-bottom: 1px solid #b48a4b; }
-  @media (max-width: 800px) {
-    .dash-top {
-      flex-direction: column; } }
   .dash-top h2 {
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -324,17 +274,6 @@ main {
     flex-direction: column;
     background-color: #00000010;
     box-shadow: inset 0px 0px 50px -5px #00000070; }
-    .dash-top .dash-list #dicks,
-    .dash-top .dash-list #dicks > option {
-      line-height: 2;
-      background-color: #6d1a1a;
-      border: 1px solid #b48a4b;
-      margin-bottom: 25px;
-      color: #d8dab8;
-      padding: 5px 25px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 700; }
     .dash-top .dash-list .listing {
       background: #d8dab8;
       box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.178);
@@ -371,8 +310,6 @@ main {
           font-weight: 700;
           color: #d8dab8;
           padding: 10px;
-          position: relative;
-          z-index: 3;
           position: relative;
           z-index: 3; }
         .dash-top .dash-list .listing .quantity span {
@@ -412,7 +349,7 @@ main {
         display: flex;
         flex-direction: column;
         height: 100%;
-        max-height: 200px;
+        max-height: 120px;
         justify-content: space-between; }
         .dash-top .dash-list .listing .actions button {
           background-color: transparent;
@@ -423,7 +360,7 @@ main {
           border-radius: 1000px;
           height: 30px;
           width: 30px;
-          margin: 6px 10px;
+          margin: 3px 10px;
           flex-shrink: 0; }
           .dash-top .dash-list .listing .actions button:hover {
             background: #b48a4b; }
@@ -432,103 +369,30 @@ main {
             width: 20px;
             fill: #d8dab8; }
         .dash-top .dash-list .listing .actions .add-minus {
-          display: flex;
-          border-radius: 1000px;
-          margin: 6px 10px;
-          padding: 3px;
-          min-width: 75px;
-          background: #906e3c; }
-          .dash-top .dash-list .listing .actions .add-minus button {
-            background-color: #b48a4b;
-            margin: 0px 0px; }
-            .dash-top .dash-list .listing .actions .add-minus button:first-child {
-              margin: 0px 0px;
-              margin-right: auto; }
-        .dash-top .dash-list .listing .actions *,
-        .dash-top .dash-list .listing .actions button {
-          margin-left: auto; }
-    .dash-top .dash-list span {
-      font-size: 7px;
-      color: #6d1a1a;
-      display: block;
-      position: absolute;
-      font-weight: 700;
-      right: -25px;
-      text-transform: uppercase;
-      transform: rotate(-90deg); }
-  .dash-top .title {
-    padding: 10px;
-    flex-basis: 30%;
-    flex-shrink: 0; }
-    .dash-top .title h3 {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 700; }
-    .dash-top .title h4 {
-      font-weight: 400; }
-  .dash-top .details {
-    border-left: 1px solid #6d1a1a;
-    margin-left: 10px;
-    padding: 10px 20px;
-    font-size: 14px;
-    line-height: 1.7; }
-    .dash-top .details strong {
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 12px;
-      margin-right: 5px; }
-  .dash-top .actions {
-    margin: 10px 3px;
-    padding: 5px 0px;
-    margin-left: auto;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    max-height: 120px;
-    justify-content: space-between; }
-    .dash-top .actions button {
-      background-color: transparent;
-      border: none;
+          display: flex; }
+        .dash-top .dash-list .listing .actions * {
+          margin-left: auto !important; }
+    .dash-top .dash-list .add-wine-button {
+      margin-top: auto;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
       display: flex;
       align-items: center;
-      background: #6d1a1a;
-      border-radius: 1000px;
-      height: 30px;
-      width: 30px;
-      margin: 3px 10px;
-      flex-shrink: 0; }
-      .dash-top .actions button:hover {
-        background: #b48a4b; }
-      .dash-top .actions button svg {
-        height: 20px;
-        width: 20px;
-        fill: #d8dab8; }
-    .dash-top .actions .add-minus {
-      display: flex; }
-    .dash-top .actions * {
-      margin-left: auto !important; }
-
-.add-wine-button {
-  margin-top: auto;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #b48a4b;
-  border: none;
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.178);
-  padding: 5px 30px;
-  border-radius: 10px; }
-  .add-wine-button p {
-    color: #6d1a1a;
-    font-weight: 700;
-    text-transform: uppercase; }
-  .add-wine-button svg {
-    margin-right: 10px; }
-    .add-wine-button svg path {
-      fill: #6d1a1a; }
+      justify-content: center;
+      background: #b48a4b;
+      border: none;
+      box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.178);
+      padding: 5px 30px;
+      border-radius: 10px; }
+      .dash-top .dash-list .add-wine-button p {
+        color: #6d1a1a;
+        font-weight: 700;
+        text-transform: uppercase; }
+      .dash-top .dash-list .add-wine-button svg {
+        margin-right: 10px; }
+        .dash-top .dash-list .add-wine-button svg path {
+          fill: #6d1a1a; }
 
 .add-note {
   position: absolute;

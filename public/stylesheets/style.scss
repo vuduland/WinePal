@@ -12,11 +12,6 @@ $shadow-inset: inset 0px 0px 50px -5px #00000094;
   font-family: 'Marcellus', serif;
   box-sizing: border-box;
 }
-html {
-  width: 100%;
-  min-width: 100vh;
-  min-height: 100vh;
-}
 body {
   font-family: 'Marcellus', serif;
   margin: 0;
@@ -28,7 +23,7 @@ body {
 }
 
 button.primary {
-  margin: 20px 0px 0px 20px;
+  margin: 20px 0px;
   background-color: $main;
   border: none;
   border-radius: 10px;
@@ -116,54 +111,16 @@ header {
       }
     }
 
-    .side-menu-inner {
-      transition: all 0.3s;
-      width: 300px;
-      margin-left: auto;
-      margin: 3px 3px; //
-      max-width: 400px;
-      height: 100vh;
-      background: $dark;
-      box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.356),
-        inset 0px 0px 100px -5px rgba(0, 0, 0, 0.651);
+    .profile-info {
       display: flex;
       flex-direction: column;
       align-items: center;
-      .close-menu {
-        background: transparent;
-        border: none;
-        margin: 20px;
-        margin-right: 30px;
-        margin-left: auto;
-        svg {
-          height: 30px;
-          width: 30px;
-          fill: $mid;
-        }
-      }
-      .profile-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .name {
-        color: $mid;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 16px;
-      }
-      .sign-out {
-        background-color: transparent;
-        border: 1px solid $mid;
-        color: $light;
-        padding: 5px 20px;
-        letter-spacing: 1px;
-        text-decoration: none;
-        &:hover {
-          background-color: $mid;
-          color: $dark;
-        }
-      }
+    }
+    .name {
+      color: $mid;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 16px;
     }
     .sign-out {
       background-color: transparent;
@@ -207,11 +164,6 @@ main {
   h1 {
     font-size: 70px;
   }
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 30px;
-    }
-  }
 }
 
 .cta {
@@ -239,14 +191,9 @@ main {
   .signup-btn {
     background-color: $light;
     color: $main;
-    border-radius: 5px;
-    text-decoration: none;
+    // font-size: 30px;
+
     margin-top: auto;
-    padding: 10px 18px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    background-color: $mid;
   }
 }
 
@@ -307,9 +254,6 @@ main {
 .dash-top {
   display: flex;
   border-bottom: 1px solid $mid;
-  @media (max-width: 800px) {
-    flex-direction: column;
-  }
   h2 {
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -392,18 +336,6 @@ main {
     flex-direction: column;
     background-color: #00000010;
     box-shadow: inset 0px 0px 50px -5px #00000070;
-    #dicks,
-    #dicks > option {
-      line-height: 2;
-      background-color: $main;
-      border: 1px solid $mid;
-      margin-bottom: 25px;
-      color: $light;
-      padding: 5px 25px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 700;
-    }
 
     .listing {
       background: $light;
@@ -446,9 +378,6 @@ main {
           font-weight: 700;
           color: $light;
           padding: 10px;
-
-          position: relative;
-          z-index: 3;
 
           position: relative;
           z-index: 3;
@@ -497,7 +426,7 @@ main {
         display: flex;
         flex-direction: column;
         height: 100%;
-        max-height: 200px;
+        max-height: 120px;
         justify-content: space-between;
         // background: $mid;
 
@@ -510,7 +439,7 @@ main {
           border-radius: 1000px;
           height: 30px;
           width: 30px;
-          margin: 6px 10px;
+          margin: 3px 10px;
           flex-shrink: 0;
           &:hover {
             background: $mid;
@@ -523,128 +452,39 @@ main {
         }
         .add-minus {
           display: flex;
-          border-radius: 1000px;
-          margin: 6px 10px;
-          padding: 3px;
-          min-width: 75px;
-          background: darken($mid, 10%);
-
-          button {
-            background-color: $mid;
-            margin: 0px 0px;
-            &:first-child {
-              margin: 0px 0px;
-              margin-right: auto;
-            }
-          }
         }
-        *,
-        button {
-          margin-left: auto;
+        * {
+          margin-left: auto !important;
         }
       }
     }
-    span {
-      font-size: 7px;
-      color: $main;
-      display: block;
-      position: absolute;
-      font-weight: 700;
-      right: -25px;
-      text-transform: uppercase;
-      transform: rotate(-90deg);
-    }
-  }
-  .title {
-    padding: 10px;
-    flex-basis: 30%;
-    flex-shrink: 0;
-    h3 {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 700;
-    }
-    h4 {
-      font-weight: 400;
-    }
-  }
-  .details {
-    border-left: 1px solid $main;
-    margin-left: 10px;
-    padding: 10px 20px;
-    font-size: 14px;
-    line-height: 1.7;
-    strong {
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 12px;
-      margin-right: 5px;
-    }
-  }
-  .actions {
-    margin: 10px 3px;
-    padding: 5px 0px;
-    margin-left: auto;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    max-height: 120px;
-    justify-content: space-between;
-    // background: $mid;
-
-    button {
-      background-color: transparent;
-      border: none;
+    .add-wine-button {
+      margin-top: auto;
+      // width: calc(50% - 40px);
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
       display: flex;
       align-items: center;
-      background: $main;
-      border-radius: 1000px;
-      height: 30px;
-      width: 30px;
-      margin: 3px 10px;
-      flex-shrink: 0;
-      &:hover {
-        background: $mid;
+      justify-content: center;
+      background: $mid;
+      border: none;
+      box-shadow: $medium-shadow;
+      padding: 5px 30px;
+
+      border-radius: 10px;
+
+      p {
+        color: $main;
+        font-weight: 700;
+        text-transform: uppercase;
       }
       svg {
-        height: 20px;
-        width: 20px;
-        fill: $light;
+        margin-right: 10px;
+        path {
+          fill: $main;
+        }
       }
-    }
-    .add-minus {
-      display: flex;
-    }
-    * {
-      margin-left: auto !important;
-    }
-  }
-}
-.add-wine-button {
-  margin-top: auto;
-  // width: calc(50% - 40px);
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: $mid;
-  border: none;
-  box-shadow: $medium-shadow;
-  padding: 5px 30px;
-
-  border-radius: 10px;
-
-  p {
-    color: $main;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-  svg {
-    margin-right: 10px;
-    path {
-      fill: $main;
     }
   }
 }
@@ -755,8 +595,6 @@ main {
       font-weight: 400;
       color: $mid;
     }
-    // .vendor {
-    // }
   }
   .single-wine-top {
     padding-bottom: 20px;
