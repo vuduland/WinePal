@@ -43,6 +43,10 @@ block content
             option(value="oldest-vintage" selected= order === 'oldest-vintage' ) Oldest Vintage
             option(value="youngest-vintage" selected= order === 'youngest-vintage' ) Youngest Vintage
             option(value="recent-updated" selected= order === 'recent-updated' ) Recent Updated
+            option(value="varietal" selected= order === 'varietal') Varietal
+            option(value="value" selected= order === 'value' ) Value
+            option(value="country" selected= order === 'country' ) Country
+            option(value="ageability-index" selected= order === 'ageability-index') Ageability Index
         each listing, history in userWines
           .listing
             .quantity(data-wine=`${listing.id}`)

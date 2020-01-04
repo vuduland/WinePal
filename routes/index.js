@@ -29,6 +29,14 @@ router.get('/dashboard/:order?', (req, res, next) => {
       return [['updatedAt', 'ASC']];
     } else if ( order === 'recent-updated') {
       return [['updatedAt', 'DESC']];
+    } else if ( order === 'varietal') {
+      return [[db.Wine, 'varietal', 'ASC']];
+    } else if ( order === 'value') {
+      return [[db.Wine, 'value', 'ASC']];
+    } else if ( order === 'country') {
+      return [[db.Wine, 'country', 'ASC']];
+    } else if ( order === 'ageability-index') {
+      return [[db.Wine, 'ageability-index', 'ASC']]
     } else {
       return [['updatedAt', 'DESC']];
     }

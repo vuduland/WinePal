@@ -367,7 +367,7 @@ main {
         .dash-top .dash-list .listing .actions .add-minus {
           display: flex; }
         .dash-top .dash-list .listing .actions * {
-          margin-left: auto; }
+          margin-left: auto !important; }
     .dash-top .dash-list .add-wine-button {
       margin-top: auto;
       position: fixed;
