@@ -446,7 +446,7 @@ main {
                 display: flex;
                 flex-direction: column;
                 height: 100%;
-                max-height: 120px;
+                max-height: 200px;
                 justify-content: space-between;
                 // background: $mid;
 
@@ -459,7 +459,7 @@ main {
                     border-radius: 1000px;
                     height: 30px;
                     width: 30px;
-                    margin: 3px 10px;
+                    margin: 6px 10px;
                     flex-shrink: 0;
                     &:hover {
                         background: $mid;
@@ -472,9 +472,23 @@ main {
                 }
                 .add-minus {
                     display: flex;
+                    border-radius: 1000px;
+                    margin: 6px 10px;
+                    padding: 3px;
+                    min-width: 75px;
+                    background: darken($mid, 10%);
+
+                    button {
+                        background-color: $mid;
+                        margin: 0px 0px;
+                        &:first-child {
+                            margin: 0px 0px;
+                            margin-right: auto;
+                        }
+                    }
                 }
-                *{
-                    margin-left: auto !important;
+                *, button{
+                    margin-left: auto;
                 }
             }
         }
