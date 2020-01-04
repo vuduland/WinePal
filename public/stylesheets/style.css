@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script|Marcellus|Petit+Formal+Script&display=swap");
 * {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: 'Marcellus', serif;
   box-sizing: border-box; }
 
 body {
+  font-family: 'Marcellus', serif;
   margin: 0;
   background: #6d1a1a;
   color: #d8dab8;
@@ -24,6 +26,7 @@ button.primary {
   letter-spacing: 2px; }
 
 header {
+  font-family: 'Marcellus', serif;
   position: fixed;
   width: 100%;
   top: 0;
@@ -54,6 +57,7 @@ header {
       display: block; }
 
 .side-menu {
+  font-family: 'Petit Formal Script', cursive;
   position: fixed;
   display: flex;
   background: #00000060;
@@ -503,5 +507,20 @@ main {
         color: #b48a4b;
         font-size: 12px;
         font-weight: 700; }
+
+about {
+  font-family: 'Marcellus', serif;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 0px 20px;
+  border-bottom: 1px solid #b48a4b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #6d1a1a;
+  z-index: 100;
+  height: 70px;
+  box-shadow: inset 0px 0px 25px -5px rgba(0, 0, 0, 0.479); }
 
 /*# sourceMappingURL=style.css.map */
