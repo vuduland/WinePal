@@ -133,6 +133,16 @@ header {
                 color: $dark;
             }
         }
+        .links {
+            a {
+                display: block;
+                color: $light;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+                text-decoration: none;
+                margin: 20px 0;
+            }
+        }
     }
 }
 main {
@@ -474,13 +484,17 @@ main {
                     display: flex;
                     border-radius: 1000px;
                     margin: 6px 10px;
-                    padding: 3px;
+                    padding: 0px 3px;
                     min-width: 75px;
-                    background: darken($mid, 10%);
+                    // background: darken($mid, 10%);
+                    border: 1px solid $main;
 
                     button {
-                        background-color: $mid;
+                        background-color: $light;
                         margin: 0px 0px;
+                        svg {
+                            fill: $main;
+                        }
                         &:first-child {
                             margin: 0px 0px;
                             margin-right: auto;

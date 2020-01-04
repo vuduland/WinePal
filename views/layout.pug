@@ -2,8 +2,8 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet' href='/stylesheets/style.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
   body
     header
       a.logo(href="/")
@@ -18,6 +18,9 @@ html
           if (name)
             h3.name= name
             a(href="/api/logout").sign-out sign out
+        .links
+          a(href="/") Home
+          a(href="/about") About
     script(src="/scripts/layout.js")
     block content
     //the rest of the .pug files are the 'block content' here. that is why they have extends layout at the top of the page.
