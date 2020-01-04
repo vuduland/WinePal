@@ -43,7 +43,7 @@ function incrementQty(wine) {
         const thisQty = document.querySelector(`.quantity[data-wine="${wine}"]`);
         const qtyVal = thisQty.querySelector('p');
         qtyVal.textContent = parseInt(qtyVal.textContent) + 1;
-        incrementButton.dataset.qty = +qty + 1;
+        incrementButton.dataset.qty = qty + 1;
       }
   });
 }

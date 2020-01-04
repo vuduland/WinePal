@@ -9,8 +9,9 @@ block content
         h2.varietal= wine.Wine.varietal
       .inventory
         p You have
-          span.quantity #{wine.quantity}
-          | Bottles
+          span.quantity
+            |  #{wine.quantity}
+          |  Bottles
         p.vendor Purchased from #{wine.vendor}
 
         // If quantity equals 0 then class = "outOfStock"

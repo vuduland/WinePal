@@ -17,7 +17,9 @@ router.get('/', function(req, res, next) {
     console.log(err);
   }
 });
-
+router.get('/about', (req, res, next) => {
+  res.render('about');
+})
 router.get('/dashboard/:order?', (req, res, next) => {
   let order = req.params.order;
   const paramOrder = () => {
