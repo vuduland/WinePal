@@ -4,6 +4,11 @@
   font-family: 'Marcellus', serif;
   box-sizing: border-box; }
 
+html {
+  width: 100%;
+  min-width: 100vh;
+  min-height: 100vh; }
+
 body {
   font-family: 'Marcellus', serif;
   margin: 0;
@@ -14,7 +19,7 @@ body {
   overflow-x: hidden; }
 
 button.primary {
-  margin: 20px 0px;
+  margin: 20px 0px 0px 20px;
   background-color: #6d1a1a;
   border: none;
   border-radius: 10px;
@@ -73,7 +78,7 @@ header {
       transform: translateX(120%); }
   .side-menu .side-menu-inner {
     transition: all 0.3s;
-    width: 33%;
+    width: 300px;
     margin-left: auto;
     max-width: 200px;
     height: 100vh;
@@ -136,6 +141,9 @@ main {
   margin: 60px auto; }
   .intro h1 {
     font-size: 70px; }
+  @media (max-width: 600px) {
+    .intro h1 {
+      font-size: 30px; } }
 
 .cta {
   text-align: center;
@@ -158,7 +166,14 @@ main {
   .cta .signup-btn {
     background-color: #d8dab8;
     color: #6d1a1a;
-    margin-top: auto; }
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: auto;
+    padding: 10px 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    background-color: #b48a4b; }
 
 .add-wine {
   display: block;
@@ -207,6 +222,9 @@ main {
 .dash-top {
   display: flex;
   border-bottom: 1px solid #b48a4b; }
+  @media (max-width: 800px) {
+    .dash-top {
+      flex-direction: column; } }
   .dash-top h2 {
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -274,6 +292,16 @@ main {
     flex-direction: column;
     background-color: #00000010;
     box-shadow: inset 0px 0px 50px -5px #00000070; }
+    .dash-top .dash-list #dicks, .dash-top .dash-list #dicks > option {
+      line-height: 2;
+      background-color: #6d1a1a;
+      border: 1px solid #b48a4b;
+      margin-bottom: 25px;
+      color: #d8dab8;
+      padding: 5px 25px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 700; }
     .dash-top .dash-list .listing {
       background: #d8dab8;
       box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.178);
@@ -349,7 +377,7 @@ main {
         display: flex;
         flex-direction: column;
         height: 100%;
-        max-height: 120px;
+        max-height: 200px;
         justify-content: space-between; }
         .dash-top .dash-list .listing .actions button {
           background-color: transparent;
@@ -360,7 +388,7 @@ main {
           border-radius: 1000px;
           height: 30px;
           width: 30px;
-          margin: 3px 10px;
+          margin: 6px 10px;
           flex-shrink: 0; }
           .dash-top .dash-list .listing .actions button:hover {
             background: #b48a4b; }
@@ -369,9 +397,20 @@ main {
             width: 20px;
             fill: #d8dab8; }
         .dash-top .dash-list .listing .actions .add-minus {
-          display: flex; }
-        .dash-top .dash-list .listing .actions * {
-          margin-left: auto !important; }
+          display: flex;
+          border-radius: 1000px;
+          margin: 6px 10px;
+          padding: 3px;
+          min-width: 75px;
+          background: #906e3c; }
+          .dash-top .dash-list .listing .actions .add-minus button {
+            background-color: #b48a4b;
+            margin: 0px 0px; }
+            .dash-top .dash-list .listing .actions .add-minus button:first-child {
+              margin: 0px 0px;
+              margin-right: auto; }
+        .dash-top .dash-list .listing .actions *, .dash-top .dash-list .listing .actions button {
+          margin-left: auto; }
     .dash-top .dash-list .add-wine-button {
       margin-top: auto;
       position: fixed;

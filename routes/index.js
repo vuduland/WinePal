@@ -1,6 +1,6 @@
 var express = require('express');
 var sequelize = require('sequelize');
-var Op = require('Sequelize').Op;
+var Op = require('sequelize').Op;
 var router = express.Router();
 
 var db = require('../models');

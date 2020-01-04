@@ -12,6 +12,11 @@ $shadow-inset: inset 0px 0px 50px -5px #00000094;
   font-family: 'Marcellus', serif;
   box-sizing: border-box;
 }
+html {
+    width: 100%;
+    min-width: 100vh;
+    min-height: 100vh;
+}
 body {
   font-family: 'Marcellus', serif;
   margin: 0;
@@ -23,7 +28,8 @@ body {
 }
 
 button.primary {
-  margin: 20px 0px;
+
+  margin: 20px 0px 0px 20px;
   background-color: $main;
   border: none;
   border-radius: 10px;
@@ -111,16 +117,54 @@ header {
       }
     }
 
-    .profile-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .name {
-      color: $mid;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 16px;
+    .side-menu-inner {
+        transition: all 0.3s;
+        width: 300px;
+        margin-left: auto;
+        max-width: 400px;
+        height: 100vh;
+        background: $dark;
+        box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.356),
+            inset 0px 0px 100px -5px rgba(0, 0, 0, 0.651);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .close-menu {
+            background: transparent;
+            border: none;
+            margin: 20px;
+            margin-right: 30px;
+            margin-left: auto;
+            svg {
+                height: 30px;
+                width: 30px;
+                fill: $mid;
+            }
+        }
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .name {
+            color: $mid;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 16px;
+        }
+        .sign-out {
+            background-color: transparent;
+            border: 1px solid $mid;
+            color: $light;
+            padding: 5px 20px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            &:hover {
+                background-color: $mid;
+                color: $dark;
+            }
+        }
+
     }
     .sign-out {
       background-color: transparent;
@@ -153,17 +197,25 @@ main {
 }
 
 .intro {
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 900px;
-  margin: 60px auto;
-  h1 {
-    font-size: 70px;
-  }
+
+
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 900px;
+    margin: 60px auto;
+    h1 {
+        font-size: 70px;
+    }
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 30px;
+        }
+    }
+
 }
 
 .cta {
@@ -180,21 +232,28 @@ main {
     margin-top: auto;
   }
 
-  button {
-    background-color: transparent;
-    font-size: 20px;
-    border-radius: 1000px;
-    border: 2px solid $light;
-    padding: 5px 50px;
-    color: $light;
-  }
-  .signup-btn {
-    background-color: $light;
-    color: $main;
-    // font-size: 30px;
 
-    margin-top: auto;
-  }
+    button {
+        background-color: transparent;
+        font-size: 20px;
+        border-radius: 1000px;
+        border: 2px solid $light;
+        padding: 5px 50px;
+        color: $light;
+    }
+    .signup-btn {
+        background-color: $light;
+        color: $main;
+        border-radius: 5px;
+        text-decoration: none;;
+        margin-top: auto;
+        padding: 10px 18px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+        background-color: $mid;
+    }
+
 }
 
 .add-wine {
@@ -252,15 +311,19 @@ main {
 }
 
 .dash-top {
-  display: flex;
-  border-bottom: 1px solid $mid;
-  h2 {
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-top: 10px;
-    margin-bottom: 50px;
-    color: $mid;
-  }
+    display: flex;
+    border-bottom: 1px solid $mid;
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
+    h2 {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        color: $mid;
+    }
+
 
   .dash-main {
     flex-basis: 50%;
@@ -336,6 +399,17 @@ main {
     flex-direction: column;
     background-color: #00000010;
     box-shadow: inset 0px 0px 50px -5px #00000070;
+      #dicks, #dicks > option {
+         line-height: 2;
+         background-color: $main;
+         border: 1px solid $mid;
+         margin-bottom: 25px;
+         color: $light;
+         padding: 5px 25px;
+         text-transform: uppercase;
+         letter-spacing: 3px;
+         font-weight: 700;
+       }
 
     .listing {
       background: $light;
@@ -373,6 +447,7 @@ main {
         // border: 1px solid $main;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.301);
 
+
         p {
           font-size: 20px;
           font-weight: 700;
@@ -381,6 +456,100 @@ main {
 
           position: relative;
           z-index: 3;
+
+                    position: relative;
+                    z-index: 3;
+                }
+                span {
+                    font-size: 7px;
+                    color: $main;
+                    display: block;
+                    position: absolute;
+                    font-weight: 700;
+                    right: -25px;
+                    text-transform: uppercase;
+                    transform: rotate(-90deg);
+                }
+            }
+            .title {
+                padding: 10px;
+                flex-basis: 30%;
+                flex-shrink: 0;
+                h3 {
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-weight: 700;
+                }
+                h4 {
+                    font-weight: 400;
+                }
+            }
+            .details {
+                border-left: 1px solid $main;
+                margin-left: 10px;
+                padding: 10px 20px;
+                font-size: 14px;
+                line-height: 1.7;
+                strong {
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-size: 12px;
+                    margin-right: 5px;
+                }
+            }
+            .actions {
+                margin: 10px 3px;
+                padding: 5px 0px;
+                margin-left: auto;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                max-height: 200px;
+                justify-content: space-between;
+                // background: $mid;
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    background: $main;
+                    border-radius: 1000px;
+                    height: 30px;
+                    width: 30px;
+                    margin: 6px 10px;
+                    flex-shrink: 0;
+                    &:hover {
+                        background: $mid;
+                    }
+                    svg {
+                        height: 20px;
+                        width: 20px;
+                        fill: $light;
+                    }
+                }
+                .add-minus {
+                    display: flex;
+                    border-radius: 1000px;
+                    margin: 6px 10px;
+                    padding: 3px;
+                    min-width: 75px;
+                    background: darken($mid, 10%);
+
+                    button {
+                        background-color: $mid;
+                        margin: 0px 0px;
+                        &:first-child {
+                            margin: 0px 0px;
+                            margin-right: auto;
+                        }
+                    }
+                }
+                *, button{
+                    margin-left: auto;
+                }
+            }
+
         }
         span {
           font-size: 7px;
