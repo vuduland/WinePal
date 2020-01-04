@@ -17,3 +17,47 @@ function changeOrder() {
   console.log(document.querySelector('#dicks').value);
   window.location.href = `/dashboard/${document.querySelector('#dicks').value}`;
 }
+
+function incrementQty(wine, qty) {
+  var headers = {
+    "Content-Type": "application/json",
+    "Access-Control-Origin": "*"
+ }
+  var data = {
+    wine,
+    qty
+  }
+  fetch("/api/increment-qty", {
+      method: "POST",
+      headers: headers,
+      body:  JSON.stringify(data)
+  })
+  .then(function(response){
+      return response.json();
+  })
+  .then(function(data){
+      console.log(data)
+  });
+}
+
+function decrementQty(wine, qty) {
+  var headers = {
+    "Content-Type": "application/json",
+    "Access-Control-Origin": "*"
+ }
+  var data = {
+    wine,
+    qty
+}
+fetch("/api/decrement-qty", {
+    method: "POST",
+    headers: headers,
+    body:  JSON.stringify(data)
+})
+.then(function(response){
+    return response.json();
+})
+.then(function(data){
+    console.log(data)
+});
+}

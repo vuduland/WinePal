@@ -107,6 +107,38 @@ router.post('/notes', (req, res, next) => {
   });
 });
 
+router.post('/increment-qty', (req, res, next) => {
+  const newQty = req.body.qty + 1;
+  try {
+    db.Inventory.update(
+      {
+        quantity: newQty
+      },
+      {
+        where: {
+          wineId: req.body.wine
+        }
+      },
+    )
+    .then(newData => {
+      res.json(newData);
+    })
+
+  } catch (error) {
+    console.log(error)
+  }
+});
+
+router.post('/decrement-qty', (req, res, next) => {
+  const newQty = req.body.qty - 1;
+  db.Inventory.update(
+  {quantity: newQty},
+  {where: req.body.inventoryId}
+  )
+  .then(newData => {
+    res.json(newData);
+  })
+})
 
 module.exports = router;
 
