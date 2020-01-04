@@ -3,6 +3,11 @@
   font-family: "Nunito Sans", sans-serif;
   box-sizing: border-box; }
 
+html {
+  width: 100%;
+  min-width: 100vh;
+  min-height: 100vh; }
+
 body {
   margin: 0;
   background: #6d1a1a;
@@ -12,7 +17,7 @@ body {
   overflow-x: hidden; }
 
 button.primary {
-  margin: 20px 0px;
+  margin: 20px 0px 0px 20px;
   background-color: #6d1a1a;
   border: none;
   border-radius: 10px;
@@ -69,7 +74,7 @@ header {
       transform: translateX(120%); }
   .side-menu .side-menu-inner {
     transition: all 0.3s;
-    width: 33%;
+    width: 300px;
     margin-left: auto;
     max-width: 400px;
     height: 100vh;
@@ -132,6 +137,9 @@ main {
   margin: 60px auto; }
   .intro h1 {
     font-size: 70px; }
+  @media (max-width: 600px) {
+    .intro h1 {
+      font-size: 30px; } }
 
 .cta {
   text-align: center;
@@ -154,7 +162,14 @@ main {
   .cta .signup-btn {
     background-color: #d8dab8;
     color: #6d1a1a;
-    margin-top: auto; }
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: auto;
+    padding: 10px 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    background-color: #b48a4b; }
 
 .add-wine {
   display: block;
@@ -203,6 +218,9 @@ main {
 .dash-top {
   display: flex;
   border-bottom: 1px solid #b48a4b; }
+  @media (max-width: 800px) {
+    .dash-top {
+      flex-direction: column; } }
   .dash-top h2 {
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -270,6 +288,16 @@ main {
     flex-direction: column;
     background-color: #00000010;
     box-shadow: inset 0px 0px 50px -5px #00000070; }
+    .dash-top .dash-list #dicks, .dash-top .dash-list #dicks > option {
+      line-height: 2;
+      background-color: #6d1a1a;
+      border: 1px solid #b48a4b;
+      margin-bottom: 25px;
+      color: #d8dab8;
+      padding: 5px 25px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 700; }
     .dash-top .dash-list .listing {
       background: #d8dab8;
       box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.178);

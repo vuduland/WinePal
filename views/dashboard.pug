@@ -28,6 +28,11 @@ block content
               p.note-wine= note.dataValues.Wine.vintage
                 span= note.dataValues.Wine.producer
                 span= note.dataValues.Wine.varietal
+              p.note-rating Personal Rating:
+                |
+                |
+                span=  note.dataValues.personal_rating
+
 
       .dash-list
         h2 Wines
@@ -128,7 +133,8 @@ block content
             label(for="rating-field") Personal Rating
             input#rating-field(type="text" name="rating")
             input.wine-id(name="wine" type="hidden")
-          button.primary Add Note
+            button.primary(onclick="cancelNote(event)") Cancel
+            button.primary Add Note
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js"></script>

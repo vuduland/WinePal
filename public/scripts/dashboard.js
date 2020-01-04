@@ -11,7 +11,12 @@ const addNote = wineId => {
   wineIdField.value = wineId;
 };
 
-
+function cancelNote(event) {
+  event.preventDefault();
+  const addNoteModal = document.querySelector('.add-note');
+  addNoteModal.classList.add('hidden');
+  console.log("You hid the note!")
+}
 
 function changeOrder() {
   console.log(document.querySelector('#dicks').value);
