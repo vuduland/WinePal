@@ -24,7 +24,6 @@ block content
           each note in userNotes
             .note
               p.note-date= moment(note.dataValues.createdAt).fromNow()
-<<<<<<< HEAD
                 p= note.dataValues.notes
                   br
                   br
@@ -49,17 +48,6 @@ block content
                   |
                   |
                   span= note.dataValues.personal_rating
-=======
-              p= note.dataValues.notes
-              p.note-wine= note.dataValues.Wine.vintage
-                span= note.dataValues.Wine.producer
-                span= note.dataValues.Wine.varietal
-              p.note-rating Personal Rating:
-                |
-                |
-                span=  note.dataValues.personal_rating
-
->>>>>>> 2db6de64f26c2292681d51f95bc45aad90c73a4e
 
       .dash-list
         h2 Wines
