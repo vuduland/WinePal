@@ -7,22 +7,17 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(`${__dirname}/../config/config.js`)[env];
 const db = {};
-
+var sequelize;
 if (config.use_env_variable) {
-  const sequelize = new Sequelize(process.env[config.use_env_variable], config);
+  sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
-  const sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
-    {
-      host: config.host,
-      dialect: 'mysql',
-      define: {
-        // timestamps: false,
-      },
-    }
-  );
+  sequelize = new Sequelize(config.database, config.username, config.password, {
+    host: config.host,
+    dialect: 'mysql',
+    define: {
+      // timestamps: false,
+    },
+  });
 }
 
 fs.readdirSync(__dirname)
