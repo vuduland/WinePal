@@ -420,6 +420,7 @@ main {
                 max-height: 120px;
                 justify-content: space-between;
                 // background: $mid;
+
                 button {
                     background-color: transparent;
                     border: none;
@@ -439,6 +440,12 @@ main {
                         width: 20px;
                         fill: $light;
                     }
+                }
+                .add-minus {
+                    display: flex;
+                }
+                *{
+                    margin-left: auto !important;
                 }
             }
         }

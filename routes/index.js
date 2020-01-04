@@ -17,7 +17,9 @@ router.get('/', function(req, res, next) {
     console.log(err);
   }
 });
-
+router.get('/about', (req, res, next) => {
+  res.render('about');
+})
 router.get('/dashboard/:order?', (req, res, next) => {
   let order = req.params.order;
   const paramOrder = () => {
@@ -29,6 +31,14 @@ router.get('/dashboard/:order?', (req, res, next) => {
       return [['updatedAt', 'ASC']];
     } else if ( order === 'recent-updated') {
       return [['updatedAt', 'DESC']];
+    } else if ( order === 'varietal') {
+      return [[db.Wine, 'varietal', 'ASC']];
+    } else if ( order === 'value') {
+      return [[db.Wine, 'value', 'ASC']];
+    } else if ( order === 'country') {
+      return [[db.Wine, 'country', 'ASC']];
+    } else if ( order === 'ageability-index') {
+      return [[db.Wine, 'ageability-index', 'ASC']]
     } else {
       return [['updatedAt', 'DESC']];
     }
