@@ -20,6 +20,7 @@ function changeOrder() {
 
 function incrementQty(wine) {
   const incrementButton = document.querySelector(`button[data-wine="${wine}"]`);
+  const qty = incrementButton.dataset.qty;
   var headers = {
     "Content-Type": "application/json",
     "Access-Control-Origin": "*"
@@ -42,6 +43,7 @@ function incrementQty(wine) {
         const thisQty = document.querySelector(`.quantity[data-wine="${wine}"]`);
         const qtyVal = thisQty.querySelector('p');
         qtyVal.textContent = parseInt(qtyVal.textContent) + 1;
+        incrementButton.dataset.qty = +qty + 1;
       }
   });
 }
@@ -50,6 +52,8 @@ function incrementQty(wine) {
 
 
 function decrementQty(wine) {
+  const incrementButton = document.querySelector(`button[data-wine="${wine}"]`);
+  const qty = incrementButton.dataset.qty;
   var headers = {
     "Content-Type": "application/json",
     "Access-Control-Origin": "*"
@@ -75,6 +79,7 @@ function decrementQty(wine) {
             const thisQty = document.querySelector(`.quantity[data-wine="${wine}"]`);
             const qtyVal = thisQty.querySelector('p');
             qtyVal.textContent = parseInt(qtyVal.textContent) - 1;
+            incrementButton.dataset.qty = +qty - 1;
           }
       });
 
