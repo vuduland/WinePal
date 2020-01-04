@@ -17,11 +17,11 @@ html
         .profile-info
           if (name)
             h1.name= name
-            a(href="/index.pug").sign-out Home
+            a(href="/").sign-out Home
             a(href="/api/logout").sign-out Sign Out
-            a(href="/about.pug").sign-out About
+            a(href="/about").sign-out About
 
-        
+
     script(src="/scripts/layout.js")
     block content
     //the rest of the .pug files are the 'block content' here. that is why they have extends layout at the top of the page.
