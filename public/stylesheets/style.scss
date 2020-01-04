@@ -11,6 +11,11 @@ $shadow-inset: inset 0px 0px 50px -5px #00000094;
     font-family: "Nunito Sans", sans-serif;
     box-sizing: border-box;
 }
+html {
+    width: 100%;
+    min-width: 100vh;
+    min-height: 100vh;
+}
 body {
     margin: 0;
     background: $main;
@@ -20,7 +25,7 @@ body {
     overflow-x: hidden;
 }
 button.primary {
-    margin: 20px 0px;
+    margin: 20px 0px 0px 20px;
     background-color: $main;
     border: none;
     border-radius: 10px;
@@ -83,7 +88,7 @@ header {
     }
     .side-menu-inner {
         transition: all 0.3s;
-        width: 33%;
+        width: 300px;
         margin-left: auto;
         max-width: 400px;
         height: 100vh;
@@ -155,6 +160,11 @@ main {
     h1 {
         font-size: 70px;
     }
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 30px;
+        }
+    }
 }
 
 .cta {
@@ -182,9 +192,14 @@ main {
     .signup-btn {
         background-color: $light;
         color: $main;
-        // font-size: 30px;
-
+        border-radius: 5px;
+        text-decoration: none;;
         margin-top: auto;
+        padding: 10px 18px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+        background-color: $mid;
     }
 }
 
@@ -245,6 +260,9 @@ main {
 .dash-top {
     display: flex;
     border-bottom: 1px solid $mid;
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
     h2 {
         text-transform: uppercase;
         letter-spacing: 3px;
@@ -327,7 +345,18 @@ main {
         flex-direction: column;
         background-color: #00000010;
         box-shadow: inset 0px 0px 50px -5px #00000070;
+        #dicks, #dicks > option {
+            line-height: 2;
+            background-color: $main;
+            border: 1px solid $mid;
+            margin-bottom: 25px;
+            color: $light;
+            padding: 5px 25px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
 
+        }
         .listing {
             background: $light;
             box-shadow: $medium-shadow;
