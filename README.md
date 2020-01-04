@@ -15,10 +15,16 @@ DB_PASS=password
 NODE_ENV=development
 ```
 
+### Execute this query if having GROUP BY clause error
+
+```
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''))
+```
+
 TO-DOs
 
--   Decrement wine inventory
--   Wine Details Page
+- Decrement wine inventory
+- Wine Details Page
 -
 
 ## Victor:

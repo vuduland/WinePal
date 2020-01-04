@@ -364,6 +364,7 @@ main {
         // border: 1px solid $main;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.301);
 
+
         p {
           font-size: 20px;
           font-weight: 700;
@@ -408,6 +409,100 @@ main {
           letter-spacing: 1px;
           font-size: 12px;
           margin-right: 5px;
+
+                    position: relative;
+                    z-index: 3;
+                }
+                span {
+                    font-size: 7px;
+                    color: $main;
+                    display: block;
+                    position: absolute;
+                    font-weight: 700;
+                    right: -25px;
+                    text-transform: uppercase;
+                    transform: rotate(-90deg);
+                }
+            }
+            .title {
+                padding: 10px;
+                flex-basis: 30%;
+                flex-shrink: 0;
+                h3 {
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-weight: 700;
+                }
+                h4 {
+                    font-weight: 400;
+                }
+            }
+            .details {
+                border-left: 1px solid $main;
+                margin-left: 10px;
+                padding: 10px 20px;
+                font-size: 14px;
+                line-height: 1.7;
+                strong {
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-size: 12px;
+                    margin-right: 5px;
+                }
+            }
+            .actions {
+                margin: 10px 3px;
+                padding: 5px 0px;
+                margin-left: auto;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                max-height: 200px;
+                justify-content: space-between;
+                // background: $mid;
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    background: $main;
+                    border-radius: 1000px;
+                    height: 30px;
+                    width: 30px;
+                    margin: 6px 10px;
+                    flex-shrink: 0;
+                    &:hover {
+                        background: $mid;
+                    }
+                    svg {
+                        height: 20px;
+                        width: 20px;
+                        fill: $light;
+                    }
+                }
+                .add-minus {
+                    display: flex;
+                    border-radius: 1000px;
+                    margin: 6px 10px;
+                    padding: 3px;
+                    min-width: 75px;
+                    background: darken($mid, 10%);
+
+                    button {
+                        background-color: $mid;
+                        margin: 0px 0px;
+                        &:first-child {
+                            margin: 0px 0px;
+                            margin-right: auto;
+                        }
+                    }
+                }
+                *, button{
+                    margin-left: auto;
+                }
+            }
+
         }
       }
       .actions {
