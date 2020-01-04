@@ -373,7 +373,7 @@ main {
         display: flex;
         flex-direction: column;
         height: 100%;
-        max-height: 120px;
+        max-height: 200px;
         justify-content: space-between; }
         .dash-top .dash-list .listing .actions button {
           background-color: transparent;
@@ -384,7 +384,7 @@ main {
           border-radius: 1000px;
           height: 30px;
           width: 30px;
-          margin: 3px 10px;
+          margin: 6px 10px;
           flex-shrink: 0; }
           .dash-top .dash-list .listing .actions button:hover {
             background: #b48a4b; }
@@ -393,9 +393,20 @@ main {
             width: 20px;
             fill: #d8dab8; }
         .dash-top .dash-list .listing .actions .add-minus {
-          display: flex; }
-        .dash-top .dash-list .listing .actions * {
-          margin-left: auto !important; }
+          display: flex;
+          background-color: #b48a4b;
+          border-radius: 1000px;
+          margin: 6px 10px;
+          padding: 3px;
+          min-width: 75px; }
+          .dash-top .dash-list .listing .actions .add-minus button {
+            margin: 0px 0px;
+            background: #906e3c; }
+            .dash-top .dash-list .listing .actions .add-minus button:first-child {
+              margin: 0px 0px;
+              margin-right: auto; }
+        .dash-top .dash-list .listing .actions *, .dash-top .dash-list .listing .actions button {
+          margin-left: auto; }
     .dash-top .dash-list .add-wine-button {
       margin-top: auto;
       position: fixed;
