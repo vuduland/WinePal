@@ -101,6 +101,7 @@ header {
       transition: all 0.3s;
       width: 300px;
       margin-left: auto;
+      margin: 3px 3px;
       max-width: 400px;
       height: 100vh;
       background: #2b2222;

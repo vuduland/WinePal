@@ -3,10 +3,6 @@ extends layout
 block content
   main
     .dash-top
-      //- h1 Welcome, #{name}!
-      //- h2 Welcome, #{id}
-
-      //- h2= email
       .dash-main
         .overview
           h2 Your Collection
@@ -38,26 +34,20 @@ block content
         h2 Wines
         select#dicks(onchange="changeOrder()")
           value = order
-            //- case order
-            //-   when 'oldest-vintage'
-            //-     selected = 'oldest-vintage'
-            //-   when 'youngest-vintage'
-            //-     selected = 'youngest-vintage'
-            //-   when 'recent-updated'
-            //-     selected = 'recent-updated'
-            option(value="oldest-vintage" selected= order === 'oldest-vintage' ) Oldest Vintage
-            option(value="youngest-vintage" selected= order === 'youngest-vintage' ) Youngest Vintage
-            option(value="recent-updated" selected= order === 'recent-updated' ) Recent Updated
-            option(value="varietal" selected= order === 'varietal') Varietal
-            option(value="value" selected= order === 'value' ) Value
-            option(value="country" selected= order === 'country' ) Country
             option(value="ageability-index" selected= order === 'ageability-index') Ageability Index
+            option(value="country" selected= order === 'country' ) Country
+            option(value="oldest-vintage" selected= order === 'oldest-vintage' ) Older Vintage
+            option(value="youngest-vintage" selected= order === 'youngest-vintage' ) Recent Vintage
+            option(value="recent-updated" selected= order === 'recent-updated' ) Recent Updated
+            option(value="value" selected= order === 'value' ) Value
+            option(value="varietal" selected= order === 'varietal') Varietal
+
         each listing, history in userWines
           .listing
             .quantity(data-wine=`${listing.id}`)
               if listing.quantity < 1
                 p 0
-                //- Replace x with "Out of Stock" symbol
+
               else
                 p #{listing.quantity}
               span Bottles
