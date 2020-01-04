@@ -21,6 +21,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
+
 button.primary {
   margin: 20px 0px;
   background-color: $main;
@@ -89,7 +90,7 @@ header {
     transition: all 0.3s;
     width: 33%;
     margin-left: auto;
-    max-width: 400px;
+    max-width: 200px;
     height: 100vh;
     background: $dark;
     box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.356),
@@ -109,6 +110,7 @@ header {
         fill: $mid;
       }
     }
+
     .profile-info {
       display: flex;
       flex-direction: column;
@@ -134,9 +136,11 @@ header {
     }
   }
 }
+
 main {
   margin-top: 70px;
 }
+
 .hero-back {
   position: absolute;
   top: 0;
@@ -147,6 +151,7 @@ main {
   filter: sepia(1) blur(3px) opacity(0.15);
   z-index: -1;
 }
+
 .intro {
   text-align: center;
   min-height: 100vh;
@@ -630,3 +635,33 @@ main {
 }
 
 // About Me Page //
+
+.about-main {
+  background-image: url('/public/images/winetoast.jpg');
+  position: relative;
+  text-align: center;
+  font-size: 25px;
+  padding-top: 225px;
+  font-family: 'Marcellus', serif;
+  color: $light;
+  box-shadow: inset 0px 0px 100px 0px rgba(0, 0, 0, 0.705);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.about-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url('/images/winetoast.jpg');
+  filter: sepia(1) blur(3px) opacity(0.15);
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer {
+  text-align: center;
+}
