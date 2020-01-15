@@ -16,7 +16,7 @@ body {
   font-family: 'Marcellus', serif;
   margin: 0;
   background: $main;
-  color: $light;
+  color: $mid;
   box-shadow: inset 0px 0px 100px 0px rgba(0, 0, 0, 0.705);
   min-height: 100vh;
   overflow-x: hidden;
@@ -34,6 +34,24 @@ button.primary {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+// top Nav //
+.main-navbar,
+.topMenu {
+  text-decoration: none;
+  font-size: 20px;
+  color: $mid;
+  padding: 10px 65px;
+  a:hover {
+    padding-bottom: 5px;
+    color: $light;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+// -- end of Top Nav -- //
+
+// Header //
 header {
   font-family: 'Marcellus', serif;
   position: fixed;
@@ -44,7 +62,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: $main;
+  background: $dark;
   z-index: 100;
   height: 70px;
   box-shadow: inset 0px 0px 25px -5px rgba(0, 0, 0, 0.479);
@@ -69,6 +87,9 @@ header {
     }
   }
 }
+// end of Header //
+
+// side menu //
 .side-menu {
   font-family: 'Petit Formal Script', cursive;
   position: fixed;
@@ -84,20 +105,30 @@ header {
     pointer-events: none;
     .side-menu-inner {
       transform: translateX(120%);
+      color: $mid;
     }
   }
   .side-menu-inner {
     transition: all 0.3s;
     width: 33%;
+    color: $light;
     margin-left: auto;
     max-width: 200px;
     height: 100vh;
     background: $dark;
+    line-height: 50px;
     box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.356),
       inset 0px 0px 100px -5px rgba(0, 0, 0, 0.651);
     display: flex;
     flex-direction: column;
     align-items: center;
+    a:hover {
+      padding-bottom: 5px;
+      color: $light;
+      text-transform: uppercase 30px;
+      transition: all 0.3s ease-in-out;
+      transform: scale(1.3);
+    }
     .close-menu {
       background: transparent;
       border: none;
@@ -136,10 +167,25 @@ header {
     }
   }
 }
+// end of side menu //
 
 main {
   margin-top: 70px;
 }
+
+// input areas in Register Area //
+
+input {
+  border-radius: 25px;
+  border: 2px solid $mid;
+  padding: 20px;
+  width: 200px;
+  height: 15px;
+  background-color: transparent;
+  color: $mid;
+  font-size: 15px;
+}
+//  Register Area //
 
 .hero-back {
   position: absolute;
@@ -176,23 +222,31 @@ main {
     flex-direction: column;
     flex-grow: 1;
     padding: 20px;
-
     margin-top: auto;
+    color: $mid;
   }
 
   button {
     background-color: transparent;
     font-size: 20px;
     border-radius: 1000px;
-    border: 2px solid $light;
+    border: 2px solid $mid;
     padding: 5px 50px;
+    color: $mid;
+    margin-top: 20px;
+  }
+  button:hover {
+    padding-bottom: 5px;
     color: $light;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
   }
   .signup-btn {
-    background-color: $light;
-    color: $main;
+    background-color: $main;
+    color: $mid;
+    font-size: 15px;
     // font-size: 30px;
-
     margin-top: auto;
   }
 }
@@ -224,11 +278,14 @@ main {
     padding: 5px;
   }
   input {
-    background: transparentize($light, $amount: 0.7);
-    appearance: none;
-    -webkit-appearance: none;
-    border: none;
-    border-bottom: 1px solid $main;
+    border-radius: 25px;
+    border: 2px solid $light;
+    padding: 20px;
+    width: 200px;
+    height: 15px;
+    background-color: transparent;
+    color: $light;
+    font-size: 20px;
   }
   label {
     color: $main;
@@ -662,4 +719,6 @@ main {
 
 .footer {
   text-align: center;
+  color: $mid;
+  background: $dark;
 }

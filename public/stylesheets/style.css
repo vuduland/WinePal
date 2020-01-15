@@ -8,7 +8,7 @@ body {
   font-family: 'Marcellus', serif;
   margin: 0;
   background: #6d1a1a;
-  color: #d8dab8;
+  color: #b48a4b;
   box-shadow: inset 0px 0px 100px 0px rgba(0, 0, 0, 0.705);
   min-height: 100vh;
   overflow-x: hidden; }
@@ -25,6 +25,19 @@ button.primary {
   text-transform: uppercase;
   letter-spacing: 2px; }
 
+.main-navbar,
+.topMenu {
+  text-decoration: none;
+  font-size: 20px;
+  color: #b48a4b;
+  padding: 10px 65px; }
+  .main-navbar a:hover,
+  .topMenu a:hover {
+    padding-bottom: 5px;
+    color: #d8dab8;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out; }
+
 header {
   font-family: 'Marcellus', serif;
   position: fixed;
@@ -35,7 +48,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #6d1a1a;
+  background: #2b2222;
   z-index: 100;
   height: 70px;
   box-shadow: inset 0px 0px 25px -5px rgba(0, 0, 0, 0.479); }
@@ -70,18 +83,27 @@ header {
     opacity: 0;
     pointer-events: none; }
     .side-menu.closed .side-menu-inner {
-      transform: translateX(120%); }
+      transform: translateX(120%);
+      color: #b48a4b; }
   .side-menu .side-menu-inner {
     transition: all 0.3s;
     width: 33%;
+    color: #d8dab8;
     margin-left: auto;
     max-width: 200px;
     height: 100vh;
     background: #2b2222;
+    line-height: 50px;
     box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.356), inset 0px 0px 100px -5px rgba(0, 0, 0, 0.651);
     display: flex;
     flex-direction: column;
     align-items: center; }
+    .side-menu .side-menu-inner a:hover {
+      padding-bottom: 5px;
+      color: #d8dab8;
+      text-transform: uppercase 30px;
+      transition: all 0.3s ease-in-out;
+      transform: scale(1.3); }
     .side-menu .side-menu-inner .close-menu {
       background: transparent;
       border: none;
@@ -115,6 +137,16 @@ header {
 main {
   margin-top: 70px; }
 
+input {
+  border-radius: 25px;
+  border: 2px solid #b48a4b;
+  padding: 20px;
+  width: 200px;
+  height: 15px;
+  background-color: transparent;
+  color: #b48a4b;
+  font-size: 15px; }
+
 .hero-back {
   position: absolute;
   top: 0;
@@ -147,17 +179,26 @@ main {
     flex-direction: column;
     flex-grow: 1;
     padding: 20px;
-    margin-top: auto; }
+    margin-top: auto;
+    color: #b48a4b; }
   .cta button {
     background-color: transparent;
     font-size: 20px;
     border-radius: 1000px;
-    border: 2px solid #d8dab8;
+    border: 2px solid #b48a4b;
     padding: 5px 50px;
-    color: #d8dab8; }
+    color: #b48a4b;
+    margin-top: 20px; }
+  .cta button:hover {
+    padding-bottom: 5px;
+    color: #d8dab8;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1); }
   .cta .signup-btn {
-    background-color: #d8dab8;
-    color: #6d1a1a;
+    background-color: #6d1a1a;
+    color: #b48a4b;
+    font-size: 15px;
     margin-top: auto; }
 
 .add-wine {
@@ -183,11 +224,14 @@ main {
     width: 100%;
     padding: 5px; }
   .add-wine input {
-    background: rgba(216, 218, 184, 0.3);
-    appearance: none;
-    -webkit-appearance: none;
-    border: none;
-    border-bottom: 1px solid #6d1a1a; }
+    border-radius: 25px;
+    border: 2px solid #d8dab8;
+    padding: 20px;
+    width: 200px;
+    height: 15px;
+    background-color: transparent;
+    color: #d8dab8;
+    font-size: 20px; }
   .add-wine label {
     color: #6d1a1a;
     font-weight: 700;
@@ -533,6 +577,8 @@ main {
   background-size: cover; }
 
 .footer {
-  text-align: center; }
+  text-align: center;
+  color: #b48a4b;
+  background: #2b2222; }
 
 /*# sourceMappingURL=style.css.map */
