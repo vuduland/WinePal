@@ -2,8 +2,8 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet' href='/stylesheets/style.css')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
   body
     header
       a.logo(href="/")
@@ -42,13 +42,6 @@ html
           a(href="/login").topMenu Login
           if(name)
             a(href="/api/logout").topMenu SignOut
-
-
-          //- if (name)
-          //-   h1.name= name
-          //-   a(href="/api/logout").sign-out Sign Out
-          //- a(href="/dashboard").sign-out Home
-          //- a(href="/about").sign-out About
 
 
 
