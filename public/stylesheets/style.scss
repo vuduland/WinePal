@@ -47,6 +47,9 @@ button.primary {
     text-transform: uppercase;
     transition: all 0.3s ease-in-out;
   }
+  #grayedOut {
+    color: #88888894
+  }
 }
 
 // -- end of Top Nav -- //
@@ -692,7 +695,6 @@ input {
 // About Me Page //
 
 .about-main {
-  background-image: url('/public/images/winetoast.jpg');
   position: relative;
   text-align: center;
   font-size: 25px;

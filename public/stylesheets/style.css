@@ -37,6 +37,9 @@ button.primary {
     color: #d8dab8;
     text-transform: uppercase;
     transition: all 0.3s ease-in-out; }
+  .main-navbar #grayedOut,
+  .topMenu #grayedOut {
+    color: #88888894; }
 
 header {
   font-family: 'Marcellus', serif;
@@ -553,7 +556,6 @@ input {
         font-weight: 700; }
 
 .about-main {
-  background-image: url("/public/images/winetoast.jpg");
   position: relative;
   text-align: center;
   font-size: 25px;
